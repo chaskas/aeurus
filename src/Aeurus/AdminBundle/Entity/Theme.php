@@ -40,6 +40,11 @@ class Theme
      */
     protected $tags;
 
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
     /**
      * Constructor
      */

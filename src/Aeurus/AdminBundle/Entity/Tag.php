@@ -36,7 +36,10 @@ class Tag
      */
     protected $themes;
 
-
+    public function __toString()
+    {
+        return $this->getName();
+    }
     
     /**
      * Constructor
