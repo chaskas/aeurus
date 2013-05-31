@@ -1,0 +1,5 @@
+aeurus_admin:
+    resource: "@AeurusAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
