@@ -12,7 +12,10 @@ class ThemeType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('tags', null, array('required' => false))
+            ->add('description')
+            //->add('path')
+            ->add('tags')
+            ->add('file')
         ;
     }
 

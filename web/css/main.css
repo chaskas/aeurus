@@ -75,23 +75,27 @@ a.secondary-button {
         color: rgb(75, 113, 151);
     }
 
-    .label-ebooks,
-    .label-revistas,
-    .label-basesdedatos {
+    .label-themes,
+    .label-tags,
+    .label-users,
+    .label-statistics {
         width: 15px;
         height: 15px;
         display: inline-block;
         margin-right: 0.5em;
         border-radius: 3px;
     }
-    .label-ebooks {
+    .label-themes {
         background: #ffc94c;
     }
-    .label-revistas {
+    .label-tags {
         background: #41ccb4;
     }
-    .label-basesdedatos {
+    .label-users {
         background: #40c365;
+    }
+    .label-statistics {
+        background: #C34040;
     }
 
 /* Email Item Styles */
