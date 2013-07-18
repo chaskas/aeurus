@@ -2,12 +2,64 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}Aeurus Themes{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.1.0/pure-min.css">
+            <link href="{{ asset('/css/main.css') }}" type="text/css" rel="stylesheet" />
+            <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+
+        <div class="pure-g-r content" id="layout">
+
+            <div class="pure-u" id="nav">
+                <a href="#nav" class="nav-menu-button">Menú</a>
+                <a href="{{ path('admin_theme') }}">
+                    HOLA{# <img src="{{ asset('img/logo.png') }}" /> #}
+                </a>
+                <br/><br/>
+                <div class="nav-inner">
+                    <div class="pure-menu pure-menu-open">
+                        <ul>
+                            <li>
+                                <a href="{{ path('admin_theme') }}">
+                                    <span class="label-ebooks"></span>Plantillas
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ path('admin_tag') }}">
+                                    <span class="label-revistas"></span>Etiquetas
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="label-basesdedatos"></span>Usuarios
+                                </a>
+                            </li>
+                            <li class="pure-menu-heading">Configuración</li>
+                            
+                            <li><a href="#">Conf. 1</a></li>
+                            <li><a href="#">Conf. 2</a></li>
+                            {#
+                            <li><a href="{{ path('admin_editorial') }}">Editoriales</a></li>
+                            <li><a href="{{ path('admin_source') }}">Fuentes</a></li>
+                            #}
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pure-u" id="main">
+            {% block body %}
+
+            {% endblock %}
+            </div>
+        
+        </div>
+        
         {% block javascripts %}{% endblock %}
     </body>
 </html>

@@ -1,20 +1,35 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Tag creation</h1>
+    <div class="content pure-g">
+        <div class="content-header pure-g">
+            <div class="pure-u-1-2">
+                <h1 class="content-title">Etiquetas</h1>
+                <p class="content-subtitle">
+                    Complete el formulario para agregar nueva etiqueta.
+                </p>
+            </div>
+            <div class="pure-u-1-2 content-controls">
+                <a class="pure-button secondary-button" href="{{ path('admin_tag') }}">Volver</a>
+            </div>
+        </div>
+        <div class="content-body pure-u-1">
+            <form action="{{ path('admin_tag_create') }}" method="post" {{ form_enctype(form) }} class="pure-form pure-form-stacked">
 
-    <form action="{{ path('admin_tag_create') }}" method="post" {{ form_enctype(form) }}>
-        {{ form_widget(form) }}
-        <p>
-            <button type="submit">Create</button>
-        </p>
-    </form>
+                {{ form_errors(form) }}
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('admin_tag') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+                <div>
+                    {{ form_label(form.name) }}
+                    {{ form_errors(form.name) }}
+                    {{ form_widget(form.name) }}
+                </div>
+
+                {{ form_rest(form) }}
+
+                <p>
+                    <button type="submit" class="pure-button success">Guardar</button>
+                </p>
+            </form>
+        </div>
+    </div>
 {% endblock %}

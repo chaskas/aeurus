@@ -1,41 +1,45 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Theme list</h1>
-
-    <table class="records_list">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('admin_theme_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.name }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('admin_theme_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('admin_theme_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-        <ul>
-        <li>
-            <a href="{{ path('admin_theme_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
-    {% endblock %}
+    <div class="content pure-g">
+        <div class="content-header pure-g">
+            <div class="pure-u-1-2">
+                <h1 class="content-title">Plantillas</h1>
+                <p class="content-subtitle">
+                    Listado de plantillas al <span>{{ "now"|date("d/M/Y") }}</span>
+                </p>
+            </div>
+            <div class="pure-u-1-2 content-controls">
+                <a class="pure-button secondary-button" href="{{ path('admin_theme_new') }}">Nueva</a>
+                <!-- <a class="pure-button secondary-button">Exportar a Excel</a> -->
+            </div>
+        </div>
+        <div class="content-body pure-u-1">
+            <table class="pure-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for entity in entities %}
+                    <tr {{  cycle(['class=pure-table-odd', ''] , loop.index)  }}>
+                        <td>
+                            <a href="{{ path('admin_theme_edit', { 'id': entity.id }) }}">{{ entity.name }}</a>
+                        </td>
+                        <td>
+                            <a href="{{ path('admin_theme_edit', { 'id': entity.id }) }}">
+                                <img src="{{ asset('img/icons/edit.png') }}" alt="Editar" />
+                            </a>
+                            <a href="{{ path('admin_theme_delete', { 'id': entity.id }) }}" onclick="return confirm('¿Está seguro?');">
+                                <img src="{{ asset('img/icons/trash.png') }}" alt="Eliminar" />
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>    
+{% endblock %}
