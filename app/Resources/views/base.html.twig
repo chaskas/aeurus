@@ -44,8 +44,9 @@
                                 </a>
                             </li>
                             <li class="pure-menu-heading">Configuración</li>
-                            
-                            <li><a href="#">Conf. 1</a></li>
+                            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                            <li><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>
+                            {% endif %}
                             <li><a href="#">Conf. 2</a></li>
                             {#
                             <li><a href="{{ path('admin_editorial') }}">Editoriales</a></li>
