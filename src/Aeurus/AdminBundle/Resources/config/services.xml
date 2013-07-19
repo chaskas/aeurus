@@ -8,13 +8,17 @@
     <parameters>
         <parameter key="aeurus_admin.example.class">Aeurus\AdminBundle\Example</parameter>
     </parameters>
-
+    -->
     <services>
-        <service id="aeurus_admin.example" class="%aeurus_admin.example.class%">
+        <!-- <service id="aeurus_admin.example" class="%aeurus_admin.example.class%">
             <argument type="service" id="service_id" />
             <argument>plain_value</argument>
             <argument>%parameter_name%</argument>
+        </service> -->
+        <service id="aeurus_user.registration.form.type" class="Aeurus\AdminBundle\Form\RegistrationFormType">
+            <tag name="form.type" alias="aeurus_user_registration" />
+            <argument>%fos_user.model.user.class%</argument>
         </service>
     </services>
-    -->
+    
 </container>

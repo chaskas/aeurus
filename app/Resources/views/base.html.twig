@@ -17,7 +17,11 @@
             <div class="pure-u" id="nav">
                 <a href="#nav" class="nav-menu-button">Menú</a>
                 <a href="{{ path('admin_theme') }}">
-                    Logo{# <img src="{{ asset('img/logo.png') }}" /> #}
+                    Hola! 
+                    {% if is_granted("ROLE_USER") %}
+                        {{ app.user.FirstName }}
+                    {% endif %}
+                    {# <img src="{{ asset('img/logo.png') }}" /> #}
                 </a>
                 <br/><br/>
                 <div class="nav-inner">

@@ -269,4 +269,27 @@ class Theme
         }
     }
 
+
+    /**
+     * Set path
+     *
+     * @param string $path
+     * @return Theme
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
+
+        return $this;
+    }
+
+    /**
+     * Get path
+     *
+     * @return string 
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
 }

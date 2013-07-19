@@ -92,10 +92,12 @@ CREATE TABLE `fos_user` (
   `roles` longtext COLLATE utf8_unicode_ci NOT NULL COMMENT '(DC2Type:array)',
   `credentials_expired` tinyint(1) NOT NULL,
   `credentials_expire_at` datetime DEFAULT NULL,
+  `first_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `last_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UNIQ_957A647992FC23A8` (`username_canonical`),
   UNIQUE KEY `UNIQ_957A6479A0D96FBF` (`email_canonical`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -104,7 +106,7 @@ CREATE TABLE `fos_user` (
 
 LOCK TABLES `fos_user` WRITE;
 /*!40000 ALTER TABLE `fos_user` DISABLE KEYS */;
-INSERT INTO `fos_user` VALUES (1,'admin','admin','ricamphe@gmail.com','ricamphe@gmail.com',1,'k7l0b5joa5ckw0ksw4ogookocsscws8','XLog8K77lxEYu2XvXI2/2XsSkf9VihdAGxI5NUyjMB8nrrnPt21JjYpSYBdmjIXRyo8g8/G2pi94DMJe9Rdatg==','2013-07-19 15:49:55',0,0,NULL,NULL,NULL,'a:1:{i:0;s:10:\"ROLE_ADMIN\";}',0,NULL),(2,'user','user','user@user.cl','user@user.cl',1,'l6muy88i15ww08w4occcckg0skswgww','RDJ3Y9bICxsRYz70N34I8BCdDrS7eNEVDqajlaRyDdhhuBKqtA/mQlT9MIr0xngyNKerESm8NXLLjveTXPXNng==','2013-07-19 15:29:49',0,0,NULL,NULL,NULL,'a:0:{}',0,NULL);
+INSERT INTO `fos_user` VALUES (1,'admin','admin','ricamphe@gmail.com','ricamphe@gmail.com',1,'k7l0b5joa5ckw0ksw4ogookocsscws8','XLog8K77lxEYu2XvXI2/2XsSkf9VihdAGxI5NUyjMB8nrrnPt21JjYpSYBdmjIXRyo8g8/G2pi94DMJe9Rdatg==','2013-07-19 16:25:34',0,0,NULL,NULL,NULL,'a:1:{i:0;s:10:\"ROLE_ADMIN\";}',0,NULL,'Rodrigo','Campos');
 /*!40000 ALTER TABLE `fos_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -145,4 +147,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-07-19 15:50:57
+-- Dump completed on 2013-07-19 16:26:50
