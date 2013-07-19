@@ -53,11 +53,15 @@
         <div class="content-body pure-g">
             
             {% for entity in entities %}
-            <div class="theme-item pure-u-1-6">
-                <img src="{{ asset(entity.getWebPath) }}" alt="{{ entity.name }}"/>
-                <p>
-                    <a href="{{ path('admin_theme_edit', { 'id': entity.id }) }}"><h3>{{ entity.name }}</h3></a>
-                </p>
+            <div class="pure-u-1-5">
+                <div class="theme-item">
+                    <a href="{{ path('admin_theme_edit', { 'id': entity.id }) }}">
+                        <img src="{{ asset(entity.getWebPath) }}" alt="{{ entity.name }}"/>
+                    </a>
+                    <p>
+                        <a href="{{ path('admin_theme_edit', { 'id': entity.id }) }}"><h3>{{ entity.name }}</h3></a>
+                    </p>
+                </div>
             </div>
             {% endfor %}
             

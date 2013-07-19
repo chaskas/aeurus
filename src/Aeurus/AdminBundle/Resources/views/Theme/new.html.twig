@@ -1,4 +1,5 @@
 {% extends '::base.html.twig' %}
+{% form_theme form 'AeurusAdminBundle:Form:fields.html.twig' %}
 
 {% block body -%}
     <div class="content pure-g">
@@ -23,6 +24,19 @@
                     {{ form_errors(form.name) }}
                     {{ form_widget(form.name) }}
                 </div>
+
+                <div>
+                    {{ form_label(form.description) }}
+                    {{ form_errors(form.description) }}
+                    {{ form_widget(form.description) }}
+                </div>
+                
+                <div>
+                    {{ form_label(form.tags) }}
+                    {{ form_errors(form.tags) }}
+                    {{ form_widget(form.tags) }}
+                </div>
+
 
                 {{ form_rest(form) }}
 

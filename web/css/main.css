@@ -255,3 +255,7 @@ a.secondary-button {
     color: #333;
     margin: 0;
 }
+
+.theme-edit-image {
+    border: 4px solid rgb(37, 42, 58);;
+}

@@ -1,4 +1,5 @@
 {% extends '::base.html.twig' %}
+{% form_theme edit_form 'AeurusAdminBundle:Form:fields.html.twig' %}
 
 {% block body -%}
 
@@ -15,21 +16,27 @@
             </div>
         </div>
         <div class="content-body pure-u-1">
-            <form action="{{ path('admin_theme_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }} class="pure-form pure-form-stacked">
+            <div class="pure-u-1-2">
+                <form action="{{ path('admin_theme_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }} class="pure-form pure-form-stacked">
 
-                <input type="hidden" name="_method" value="PUT" />
+                    <input type="hidden" name="_method" value="PUT" />
 
-                {{ form_widget(edit_form) }}
+                    {{ form_widget(edit_form) }}
 
-                <p>
-                    <button type="submit" class="pure-button success">Guardar</button>
-                </p>
-            </form>
-            <form action="{{ path('admin_theme_delete', { 'id': entity.id }) }}" method="post">
-                <input type="hidden" name="_method" value="DELETE" />
-                {{ form_widget(delete_form) }}
-                <button type="submit" class="pure-button error">Borrar</button>
-            </form>
+                    <p>
+                        <button type="submit" class="pure-button success">Guardar</button>
+                    </p>
+                </form>
+                <form action="{{ path('admin_theme_delete', { 'id': entity.id }) }}" method="post">
+                    <input type="hidden" name="_method" value="DELETE" />
+                    {{ form_widget(delete_form) }}
+                    <button type="submit" class="pure-button error">Borrar</button>
+                </form>
+            </div>
+            <div class="pure-u-1-3">
+                <img src="{{ asset(entity.getWebPath) }}" alt="{{ entity.name }}" class="theme-edit-image"/>
+            </div>
         </div>
+
     </div>
 {% endblock %}
