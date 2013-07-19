@@ -156,7 +156,7 @@ class Theme
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    public $path;
+    protected $path;
 
     public function getAbsolutePath()
     {

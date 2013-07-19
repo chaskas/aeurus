@@ -91,7 +91,7 @@ CREATE TABLE `theme_tag` (
 
 LOCK TABLES `theme_tag` WRITE;
 /*!40000 ALTER TABLE `theme_tag` DISABLE KEYS */;
-INSERT INTO `theme_tag` VALUES (7,11),(8,7),(9,5),(10,9),(10,11),(10,15),(11,12),(12,15),(13,7),(14,7),(15,9),(16,10),(17,5),(18,7);
+INSERT INTO `theme_tag` VALUES (7,11),(8,7),(8,8),(8,12),(9,5),(10,8),(10,9),(10,11),(10,15),(11,12),(12,15),(13,7),(14,7),(15,9),(16,10),(17,5),(18,7);
 /*!40000 ALTER TABLE `theme_tag` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -104,4 +104,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-07-19 12:57:10
+-- Dump completed on 2013-07-19 13:58:08
