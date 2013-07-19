@@ -14,6 +14,7 @@
                 <!-- <a class="pure-button secondary-button">Exportar a Excel</a> -->
             </div>
         </div>
+        {#
         <div class="content-body pure-u-1">
             <table class="pure-table">
                 <thead>
@@ -24,6 +25,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    
                     {% for entity in entities %}
                     <tr {{  cycle(['class=pure-table-odd', ''] , loop.index)  }}>
                         <td>
@@ -42,8 +44,23 @@
                         </td>
                     </tr>
                     {% endfor %}
+                    
                 </tbody>
             </table>
+        </div>
+        #}
+
+        <div class="content-body pure-g">
+            
+            {% for entity in entities %}
+            <div class="theme-item pure-u-1-6">
+                <img src="{{ asset(entity.getWebPath) }}" alt="{{ entity.name }}"/>
+                <p>
+                    <a href="{{ path('admin_theme_edit', { 'id': entity.id }) }}"><h3>{{ entity.name }}</h3></a>
+                </p>
+            </div>
+            {% endfor %}
+            
         </div>
     </div>    
 {% endblock %}
