@@ -19,6 +19,7 @@
                 <thead>
                     <tr>
                         <th>Nombre</th>
+                        <th>Path</th>
                         <th>Opciones</th>
                     </tr>
                 </thead>
@@ -27,6 +28,9 @@
                     <tr {{  cycle(['class=pure-table-odd', ''] , loop.index)  }}>
                         <td>
                             <a href="{{ path('admin_theme_edit', { 'id': entity.id }) }}">{{ entity.name }}</a>
+                        </td>
+                        <td>
+                            <img src="{{ asset(entity.getWebPath) }}" alt="{{ entity.name }}" height="200" width="200" />
                         </td>
                         <td>
                             <a href="{{ path('admin_theme_edit', { 'id': entity.id }) }}">

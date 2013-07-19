@@ -50,6 +50,7 @@ class ThemeController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+
             $em->persist($entity);
             $em->flush();
 
@@ -183,54 +184,4 @@ class ThemeController extends Controller
         ;
     }
 
-    /**
-     * @Template()
-     */
-    public function uploadAction(Request $request)
-    {
-        $theme = new Theme();
-        $form = $this->createFormBuilder($theme)
-            ->add('name')
-            ->add('file')
-            ->getForm();
-
-        $form->handleRequest($request);
-
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-
-            $theme->upload();
-
-            $em->persist($theme);
-            $em->flush();
-
-            return $this->redirect($this->generateUrl());
-        }
-
-        return array('form' => $form->createView());
-    }
-
-    public function upload()
-    {
-        // the file property can be empty if the field is not required
-        if (null === $this->getFile()) {
-            return;
-        }
-
-        // aquí usa el nombre de archivo original pero lo debes
-        // sanear al menos para evitar cualquier problema de seguridad
-
-        // move takes the target directory and then the
-        // target filename to move to
-        $this->getFile()->move(
-            $this->getUploadRootDir(),
-            $this->getFile()->getClientOriginalName()
-        );
-
-        // set the path property to the filename where you've saved the file
-        $this->path = $this->getFile()->getClientOriginalName();
-
-        // limpia la propiedad «file» ya que no la necesitas más
-        $this->file = null;
-    }
 }
