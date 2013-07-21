@@ -100,10 +100,10 @@ class Theme
     /**
      * Add tags
      *
-     * @param \Aeurus\ThemeBundle\Entity\Tag $tags
+     * @param \Aeurus\AdminBundle\Entity\Tag $tags
      * @return Theme
      */
-    public function addTag(\Aeurus\ThemeBundle\Entity\Tag $tags)
+    public function addTag(\Aeurus\AdminBundle\Entity\Tag $tags)
     {
         $this->tags[] = $tags;
     
@@ -113,9 +113,9 @@ class Theme
     /**
      * Remove tags
      *
-     * @param \Aeurus\ThemeBundle\Entity\Tag $tags
+     * @param \Aeurus\AdminBundle\Entity\Tag $tags
      */
-    public function removeTag(\Aeurus\ThemeBundle\Entity\Tag $tags)
+    public function removeTag(\Aeurus\AdminBundle\Entity\Tag $tags)
     {
         $this->tags->removeElement($tags);
     }

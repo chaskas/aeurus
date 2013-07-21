@@ -85,10 +85,10 @@ class Tag
     /**
      * Add themes
      *
-     * @param \Aeurus\ThemeBundle\Entity\Theme $themes
+     * @param \Aeurus\AdminBundle\Entity\Theme $themes
      * @return Tag
      */
-    public function addTheme(\Aeurus\ThemeBundle\Entity\Theme $themes)
+    public function addTheme(\Aeurus\AdminBundle\Entity\Theme $themes)
     {
         $this->themes[] = $themes;
     
@@ -98,9 +98,9 @@ class Tag
     /**
      * Remove themes
      *
-     * @param \Aeurus\ThemeBundle\Entity\Theme $themes
+     * @param \Aeurus\AdminBundle\Entity\Theme $themes
      */
-    public function removeTheme(\Aeurus\ThemeBundle\Entity\Theme $themes)
+    public function removeTheme(\Aeurus\AdminBundle\Entity\Theme $themes)
     {
         $this->themes->removeElement($themes);
     }
