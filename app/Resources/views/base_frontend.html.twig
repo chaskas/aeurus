@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Aeurus Themes{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.1.0/pure-min.css">
+            <link href="{{ asset('/css/main.css') }}" type="text/css" rel="stylesheet" />
+            <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        {% endblock %}
+        
+        {% block javascripts %}
+            <script src="{{ asset('/js/jquery-1.7.1.min.js') }}"></script>
+            <script src="{{ asset('/js/jquery.isotope.min.js') }}"></script>
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+
+        <div class="pure-g-r content">
+
+            <div class="pure-u">
+            {% block body %}
+
+            {% endblock %}
+            </div>
+        
+        </div>
+    </body>
+</html>

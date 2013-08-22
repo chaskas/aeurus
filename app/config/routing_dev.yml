@@ -1,6 +1,6 @@
 _welcome:
     pattern:  /
-    defaults: { _controller: AeurusAdminBundle:Theme:index }
+    defaults: { _controller: AeurusFrontendBundle:Default:index }
 
 _demo_secured:
     resource: "@AcmeDemoBundle/Controller/SecuredController.php"

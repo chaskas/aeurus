@@ -13,7 +13,7 @@ use Aeurus\AdminBundle\Form\TagType;
 /**
  * Tag controller.
  *
- * @Route("/admin/tag")
+ * @Route("/tag")
  */
 class TagController extends Controller
 {

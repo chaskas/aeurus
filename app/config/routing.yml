@@ -1,11 +1,16 @@
-aeurus_admin:
-    resource: "@AeurusAdminBundle/Controller/"
+aeurus_frontend:
+    resource: "@AeurusFrontendBundle/Controller/"
     type:     annotation
     prefix:   /
 
+aeurus_admin:
+    resource: "@AeurusAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /admin
+
 homepage:
     pattern:  /
-    defaults: { _controller: AeurusAdminBundle:Theme:index }
+    defaults: { _controller: AeurusFrontendBundle:Default:index }
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"

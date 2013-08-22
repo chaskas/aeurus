@@ -13,7 +13,7 @@ use Aeurus\AdminBundle\Form\ThemeType;
 /**
  * Theme controller.
  *
- * @Route("/admin/theme")
+ * @Route("/theme")
  */
 class ThemeController extends Controller
 {
