@@ -5,7 +5,7 @@
   <div id="page" class="container">
 
     <header class="page-header">
-      <h1>Aeurus Themes<small> selecciona las categorias que te gusten:</small></h1>
+      <h1>Aeurus Themes<small> selecciona las etiquetas que te gusten:</small></h1>
 
 <!--       <div class="description">
         <p class="lead">
@@ -54,15 +54,21 @@
 
     </header>
 
+    <div class="page-header">
+      {% for tag in tags %}
+        <span class="badge badge-info filter"><input type="checkbox" value="{{tag.name}}" class="filter-check"> {{tag.name}}</span>
+      {% endfor %}
+    </div>
+
     <div id="themes" class="isotope row">
-      {% for entity in entities %}
-      <div id="{{ entity.id }}" class="theme item span2">
+      {% for theme in themes %}
+      <div id="{{ theme.id }}" class="theme item span2 {% for tag in theme.tags %} {{ tag.name }} {% endfor %} ">
         <div class="well">
           <h4>
-            <a href="{{ path('admin_theme_edit', { 'id': entity.id }) }}" target="_blank">{{ entity.name }}</a>
+            <a href="{{ path('admin_theme_edit', { 'id': theme.id }) }}" target="_blank">{{ theme.name }}</a>
           </h4>
           <div class="info">
-            <img src="{{ asset(entity.getWebPath) }}" alt="{{ entity.name }}" width="130"/>
+            <img src="{{ asset(theme.getWebPath) }}" alt="{{ theme.name }}" width="130"/>
           </div>
         </div>
       </div>
@@ -81,6 +87,19 @@
 
         });
       });
+
+      $(".filter").click(function() { 
+        
+        if(!$(this).find(':checkbox').is(':checked')) {
+            $(this).find(':checkbox').attr('checked', true);
+            $themes.isotope({ filter: '.'+$(this).find(':checkbox').val() });
+            console.log('AgregaFiltro: ' + $(this).find(':checkbox').val());
+        } else {
+            $(this).find(':checkbox').attr('checked', false); 
+            $themes.isotope({ filter: ':not(.'+$(this).find(':checkbox').val()+')'});
+            console.log('QuitaFiltro: ' + $(this).find(':checkbox').val());
+        }  
+      }); 
     });
 
   </script>

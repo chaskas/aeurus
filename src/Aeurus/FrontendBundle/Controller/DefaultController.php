@@ -14,12 +14,15 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-    		$em = $this->getDoctrine()->getManager();
+    	$em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('AeurusAdminBundle:Theme')->findAll();
+        $themes = $em->getRepository('AeurusAdminBundle:Theme')->findAll();
+
+        $tags = $em->getRepository('AeurusAdminBundle:Tag')->findAll();
 
         return array(
-            'entities' => $entities,
+            'themes' => $themes,
+            'tags'   => $tags,
         );
     }
 }

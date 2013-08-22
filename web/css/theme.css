@@ -29,7 +29,7 @@ header div.actions .btn-toolbar {
 }
 
 .theme h4 a {
-  color: #333;
+  color: #425dbc;
 }
 
 .theme img.image {
@@ -73,4 +73,29 @@ header div.actions .btn-toolbar {
   -o-transition: width 0.001ms;
   transition: width 0.001ms;
   width: 0;
+}
+
+.label-important,
+.badge-important {
+  background-color: #b94a48;
+}
+
+.label-warning,
+.badge-warning {
+  background-color: #f89406;
+}
+
+.label-success,
+.badge-success {
+  background-color: #468847;
+}
+
+.label-info,
+.badge-info {
+  background-color: #3a87ad;
+}
+
+.label-inverse,
+.badge-inverse {
+  background-color: #333333;
 }
