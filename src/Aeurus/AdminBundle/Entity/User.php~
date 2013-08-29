@@ -6,6 +6,7 @@ namespace Aeurus\AdminBundle\Entity;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity
@@ -20,10 +21,15 @@ class User extends BaseUser
      */
     protected $id;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Order", mappedBy="user")
+     */
+    protected $orders;
+
     public function __construct()
     {
         parent::__construct();
-        // your own logic
+        $this->orders = new ArrayCollection();
     }
 
     /**
@@ -108,5 +114,38 @@ class User extends BaseUser
     public function getLastName()
     {
         return $this->last_name;
+    }
+
+    /**
+     * Add orders
+     *
+     * @param \Aeurus\AdminBundle\Entity\Order $orders
+     * @return User
+     */
+    public function addOrder(\Aeurus\AdminBundle\Entity\Order $orders)
+    {
+        $this->orders[] = $orders;
+
+        return $this;
+    }
+
+    /**
+     * Remove orders
+     *
+     * @param \Aeurus\AdminBundle\Entity\Order $orders
+     */
+    public function removeOrder(\Aeurus\AdminBundle\Entity\Order $orders)
+    {
+        $this->orders->removeElement($orders);
+    }
+
+    /**
+     * Get orders
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getOrders()
+    {
+        return $this->orders;
     }
 }

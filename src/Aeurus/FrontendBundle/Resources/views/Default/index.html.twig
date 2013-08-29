@@ -79,27 +79,29 @@
   <script>
     $(window).ready(function(){
       $themes = $('#themes');
+      $filters_array = Array();
 
       $themes.imagesLoaded( function(){
         $themes.isotope({
           itemSelector : '.item',
           layoutMode : 'masonry',
-
         });
       });
 
       $(".filter").click(function() { 
-        
         if(!$(this).find(':checkbox').is(':checked')) {
             $(this).find(':checkbox').attr('checked', true);
-            $themes.isotope({ filter: '.'+$(this).find(':checkbox').val() });
-            console.log('AgregaFiltro: ' + $(this).find(':checkbox').val());
+            console.log($filters_array.length);
+            ($filters_array.length == 0) ? $filters_array.push('.'+$(this).find(':checkbox').val()) : $filters_array.push($(this).find(':checkbox').val());
+            $themes.isotope({ filter: $filters_array.join('.') });
+            console.log('Filtros: ' + $filters_array.join('.'));
         } else {
             $(this).find(':checkbox').attr('checked', false); 
-            $themes.isotope({ filter: ':not(.'+$(this).find(':checkbox').val()+')'});
-            console.log('QuitaFiltro: ' + $(this).find(':checkbox').val());
+            $filters_array.splice( $.inArray($(this).find(':checkbox').val(), $filters_array), 1 );
+            $themes.isotope({ filter: $filters_array.join('.') });
+            console.log('Filtros: ' + $filters_array.join('.'));
         }  
-      }); 
+      });
     });
 
   </script>
