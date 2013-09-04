@@ -22,14 +22,14 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="Order", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="Application", mappedBy="user")
      */
-    protected $orders;
+    protected $applications;
 
     public function __construct()
     {
         parent::__construct();
-        $this->orders = new ArrayCollection();
+        $this->applications = new ArrayCollection();
     }
 
     /**
@@ -116,36 +116,37 @@ class User extends BaseUser
         return $this->last_name;
     }
 
+
     /**
-     * Add orders
+     * Add applications
      *
-     * @param \Aeurus\AdminBundle\Entity\Order $orders
+     * @param \Aeurus\AdminBundle\Entity\Application $applications
      * @return User
      */
-    public function addOrder(\Aeurus\AdminBundle\Entity\Order $orders)
+    public function addApplication(\Aeurus\AdminBundle\Entity\Application $applications)
     {
-        $this->orders[] = $orders;
+        $this->applications[] = $applications;
 
         return $this;
     }
 
     /**
-     * Remove orders
+     * Remove applications
      *
-     * @param \Aeurus\AdminBundle\Entity\Order $orders
+     * @param \Aeurus\AdminBundle\Entity\Application $applications
      */
-    public function removeOrder(\Aeurus\AdminBundle\Entity\Order $orders)
+    public function removeApplication(\Aeurus\AdminBundle\Entity\Application $applications)
     {
-        $this->orders->removeElement($orders);
+        $this->applications->removeElement($applications);
     }
 
     /**
-     * Get orders
+     * Get applications
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getOrders()
+    public function getApplications()
     {
-        return $this->orders;
+        return $this->applications;
     }
 }

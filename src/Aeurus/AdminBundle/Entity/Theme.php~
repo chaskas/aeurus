@@ -51,6 +51,15 @@ class Theme
      */
     protected $tags;
 
+
+    /**
+     * @var \Doctrine\Common\Collections\ArrayCollection $applications
+     * 
+     * @ORM\ManyToMany(targetEntity="Aeurus\AdminBundle\Entity\Application", mappedBy="themes")
+     * 
+     */
+    protected $applications;
+
     public function __toString()
     {
         return $this->getName();
@@ -291,5 +300,38 @@ class Theme
     public function getPath()
     {
         return $this->path;
+    }
+
+    /**
+     * Add applications
+     *
+     * @param \Aeurus\AdminBundle\Entity\Application $applications
+     * @return Theme
+     */
+    public function addApplication(\Aeurus\AdminBundle\Entity\Application $applications)
+    {
+        $this->applications[] = $applications;
+
+        return $this;
+    }
+
+    /**
+     * Remove applications
+     *
+     * @param \Aeurus\AdminBundle\Entity\Application $applications
+     */
+    public function removeApplication(\Aeurus\AdminBundle\Entity\Application $applications)
+    {
+        $this->applications->removeElement($applications);
+    }
+
+    /**
+     * Get applications
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getApplications()
+    {
+        return $this->applications;
     }
 }

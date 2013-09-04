@@ -99,3 +99,7 @@ header div.actions .btn-toolbar {
 .badge-inverse {
   background-color: #333333;
 }
+
+.mBottom {
+  bottom: 30px;
+}

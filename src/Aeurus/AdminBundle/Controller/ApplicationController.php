@@ -7,20 +7,20 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Aeurus\AdminBundle\Entity\Order;
-use Aeurus\AdminBundle\Form\OrderType;
+use Aeurus\AdminBundle\Entity\Application;
+use Aeurus\AdminBundle\Form\ApplicationType;
 
 /**
- * Order controller.
+ * Application controller.
  *
- * @Route("/order")
+ * @Route("/application")
  */
-class OrderController extends Controller
+class ApplicationController extends Controller
 {
     /**
-     * Lists all Order entities.
+     * Lists all Application entities.
      *
-     * @Route("/", name="admin_order")
+     * @Route("/", name="application")
      * @Method("GET")
      * @Template()
      */
@@ -28,7 +28,7 @@ class OrderController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('AeurusAdminBundle:Order')->findAll();
+        $entities = $em->getRepository('AeurusAdminBundle:Application')->findAll();
 
         return array(
             'entities' => $entities,
@@ -36,16 +36,16 @@ class OrderController extends Controller
     }
 
     /**
-     * Creates a new Order entity.
+     * Creates a new Application entity.
      *
-     * @Route("/", name="admin_order_create")
+     * @Route("/", name="application_create")
      * @Method("POST")
-     * @Template("AeurusAdminBundle:Order:new.html.twig")
+     * @Template("AeurusAdminBundle:Application:new.html.twig")
      */
     public function createAction(Request $request)
     {
-        $entity  = new Order();
-        $form = $this->createForm(new OrderType(), $entity);
+        $entity  = new Application();
+        $form = $this->createForm(new ApplicationType(), $entity);
         $form->bind($request);
 
         if ($form->isValid()) {
@@ -53,7 +53,7 @@ class OrderController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('admin_order_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('application_show', array('id' => $entity->getId())));
         }
 
         return array(
@@ -63,16 +63,16 @@ class OrderController extends Controller
     }
 
     /**
-     * Displays a form to create a new Order entity.
+     * Displays a form to create a new Application entity.
      *
-     * @Route("/new", name="admin_order_new")
+     * @Route("/new", name="application_new")
      * @Method("GET")
      * @Template()
      */
     public function newAction()
     {
-        $entity = new Order();
-        $form   = $this->createForm(new OrderType(), $entity);
+        $entity = new Application();
+        $form   = $this->createForm(new ApplicationType(), $entity);
 
         return array(
             'entity' => $entity,
@@ -81,9 +81,9 @@ class OrderController extends Controller
     }
 
     /**
-     * Finds and displays a Order entity.
+     * Finds and displays a Application entity.
      *
-     * @Route("/{id}", name="admin_order_show")
+     * @Route("/{id}", name="application_show")
      * @Method("GET")
      * @Template()
      */
@@ -91,10 +91,10 @@ class OrderController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AeurusAdminBundle:Order')->find($id);
+        $entity = $em->getRepository('AeurusAdminBundle:Application')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Order entity.');
+            throw $this->createNotFoundException('Unable to find Application entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -106,9 +106,9 @@ class OrderController extends Controller
     }
 
     /**
-     * Displays a form to edit an existing Order entity.
+     * Displays a form to edit an existing Application entity.
      *
-     * @Route("/{id}/edit", name="admin_order_edit")
+     * @Route("/{id}/edit", name="application_edit")
      * @Method("GET")
      * @Template()
      */
@@ -116,13 +116,13 @@ class OrderController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AeurusAdminBundle:Order')->find($id);
+        $entity = $em->getRepository('AeurusAdminBundle:Application')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Order entity.');
+            throw $this->createNotFoundException('Unable to find Application entity.');
         }
 
-        $editForm = $this->createForm(new OrderType(), $entity);
+        $editForm = $this->createForm(new ApplicationType(), $entity);
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
@@ -133,31 +133,31 @@ class OrderController extends Controller
     }
 
     /**
-     * Edits an existing Order entity.
+     * Edits an existing Application entity.
      *
-     * @Route("/{id}", name="admin_order_update")
+     * @Route("/{id}", name="application_update")
      * @Method("PUT")
-     * @Template("AeurusAdminBundle:Order:edit.html.twig")
+     * @Template("AeurusAdminBundle:Application:edit.html.twig")
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AeurusAdminBundle:Order')->find($id);
+        $entity = $em->getRepository('AeurusAdminBundle:Application')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Order entity.');
+            throw $this->createNotFoundException('Unable to find Application entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
-        $editForm = $this->createForm(new OrderType(), $entity);
+        $editForm = $this->createForm(new ApplicationType(), $entity);
         $editForm->bind($request);
 
         if ($editForm->isValid()) {
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('admin_order_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('application_edit', array('id' => $id)));
         }
 
         return array(
@@ -168,9 +168,9 @@ class OrderController extends Controller
     }
 
     /**
-     * Deletes a Order entity.
+     * Deletes a Application entity.
      *
-     * @Route("/{id}", name="admin_order_delete")
+     * @Route("/{id}", name="application_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, $id)
@@ -180,21 +180,21 @@ class OrderController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('AeurusAdminBundle:Order')->find($id);
+            $entity = $em->getRepository('AeurusAdminBundle:Application')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Order entity.');
+                throw $this->createNotFoundException('Unable to find Application entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('admin_order'));
+        return $this->redirect($this->generateUrl('application'));
     }
 
     /**
-     * Creates a form to delete a Order entity by id.
+     * Creates a form to delete a Application entity by id.
      *
      * @param mixed $id The entity id
      *
