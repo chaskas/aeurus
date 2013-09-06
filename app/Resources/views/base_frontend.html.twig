@@ -10,23 +10,53 @@
         {% block stylesheets %}
             <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-            <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-            <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-            <link href="css/theme.css" rel="stylesheet">
-            <link href="css/theme-responsive.css" rel="stylesheet">
+            <link href="{{ asset('bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+            <link href="{{ asset('bootstrap/css/bootstrap-responsive.css') }}" rel="stylesheet">
+            <link href="{{ asset('css/theme.css') }}" rel="stylesheet">
+            <link href="{{ asset('css/theme-responsive.css') }}" rel="stylesheet">
         {% endblock %}
         {% block javascripts %}
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
             <script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
-            <script src="bootstrap/js/bootstrap.min.js"></script>
-            <script src="js/jquery.ba-hashchange.min.js"></script>
-            <script src="js/jquery.isotope.min.js"></script>
-            <script src="js/imagesloaded.min.js"></script>
+            <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('js/jquery.ba-hashchange.min.js') }}"></script>
+            <script src="{{ asset('js/jquery.isotope.min.js') }}"></script>
+            <script src="{{ asset('js/imagesloaded.min.js') }}"></script>
         {% endblock %}
         
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+
+        <div class="navbar navbar-fixed-top">
+          <div class="navbar-inner">
+            <div class="container">
+              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </a>
+              <a class="brand" href="#">Aeurus
+              </a>
+              {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+              <div class="nav-collapse">
+                <ul class="nav">
+                  <li><a href="#">Bienvenido {{ app.user.FirstName }}</a></li>
+                  <li><a href="#">Mis ordenes</a></li>
+                  <li><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>
+                </ul>
+              </div>
+              {% else %}
+              <div class="nav-collapse">
+                <ul class="nav">
+                  <li><a href="{{ path('fos_user_security_login') }}">Login</a></li>
+                </ul>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+            
 
         {% block body %}
 

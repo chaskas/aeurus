@@ -1,5 +1,9 @@
 /* General
 ------------------------------- */
+body {
+padding-top: 30px;
+}
+
 #page {
   padding: 18px 0;
 }
@@ -102,4 +106,37 @@ header div.actions .btn-toolbar {
 
 .mBottom {
   bottom: 30px;
+}
+
+/* This parent can be any width and height */
+.block {
+  /*text-align: center;*/
+  height: 100%;
+}
+ 
+/* The ghost, nudged to maintain perfect centering */
+.block:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em; /* Adjusts for spacing */
+}
+
+/* The element to be centered, can
+   also be of any width and height */ 
+.centered {
+  display: inline-block;
+  vertical-align: middle;
+  width: 300px;
+  position:absolute;
+  left:50%;
+  top:50%;
+  margin:-250px 0 0 -250px;
+}
+#loginModal {
+  width: 500px;
+}
+.modal-body {
+  max-height: 500px;
 }

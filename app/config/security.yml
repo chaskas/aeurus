@@ -57,6 +57,11 @@ security:
             form_login:
                 provider: fos_userbundle
                 csrf_provider: form.csrf_provider
+                login_path: /login 
+                check_path: /login_check 
+                default_target_path: / 
+                always_use_default_target_path: false 
+                use_referer: true 
             logout:       true
             anonymous:    true
 
@@ -65,3 +70,5 @@ security:
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
+        - { path: ^/order/, role: ROLE_USER }
+

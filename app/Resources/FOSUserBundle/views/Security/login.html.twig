@@ -1,0 +1,83 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+{% if error %}
+    <div>{{ error|trans }}</div>
+{% endif %}
+
+<div class="block">
+<div id="loginModal" class="centered">
+  <div class="modal-body">
+    <div class="well">
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#login" data-toggle="tab">Login</a></li>
+        <li><a href="{{ path('fos_user_registration_register') }}" >Crear cuenta</a></li>
+      </ul>
+      <div id="myTabContent" class="tab-content">
+        <div class="tab-pane active in" id="login">
+          <form action="{{ path("fos_user_security_check") }}" method="post">
+              <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+              <fieldset>
+ 
+              <div class="control-group">
+                <!-- Username -->
+                <label for="username" class="control-label">{{ 'security.login.username'|trans }}</label>
+                <div class="controls">
+                  <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" placeholder="" class="input-xlarge"/>
+                </div>
+              </div>
+
+              <div class="control-group">
+                <!-- Password-->
+                <label for="password" class="control-label">{{ 'security.login.password'|trans }}</label>
+                <div class="controls">
+                  <input type="password" id="password" name="_password" required="required" placeholder="" class="input-xlarge"/>
+                </div>
+              </div>
+
+              <div class="control-group">
+                <!-- Remember-me-->
+                <div class="controls">
+                  <input type="checkbox" id="remember_me" name="_remember_me" value="on" class="pull-left"/> 
+                  <label for="remember_me" class="control-label">&nbsp;{{ 'security.login.remember_me'|trans }}</label>
+                </div>
+              </div>
+
+
+              <div class="control-group">
+                <!-- Button -->
+                <div class="controls">
+                  <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" class="btn btn-success"/>
+                </div>
+              </div>
+            </fieldset>
+          </form>                
+        </div>
+        <div class="tab-pane fade" id="create">
+          <form id="tab">
+            <label>Username</label>
+            <input type="text" value="" class="input-xlarge">
+            <label>First Name</label>
+            <input type="text" value="" class="input-xlarge">
+            <label>Last Name</label>
+            <input type="text" value="" class="input-xlarge">
+            <label>Email</label>
+            <input type="text" value="" class="input-xlarge">
+            <label>Email</label>
+            <input type="text" value="" class="input-xlarge">
+            <label>Email</label>
+            <input type="text" value="" class="input-xlarge">
+            </textarea>
+
+            <div>
+              <button class="btn btn-primary">Crear cuenta</button>
+            </div>
+          </form>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock fos_user_content %}
