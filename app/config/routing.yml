@@ -8,6 +8,11 @@ aeurus_admin:
     type:     annotation
     prefix:   /admin
 
+admin_homepage:
+    pattern: /admin
+    defaults: { _controller: AeurusAdminBundle:Theme:index }
+
+
 homepage:
     pattern:  /
     defaults: { _controller: AeurusFrontendBundle:Default:index }
