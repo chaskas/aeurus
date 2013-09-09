@@ -21,13 +21,13 @@
     </head>
     <body>
 
-        {% for type, messages in app.session.flashbag.all() %}
+        {#% for type, messages in app.session.flashbag.all() %}
             {% for message in messages %}
                 <div class="flash-{{ type }}">
                     {{ message }}
                 </div>
             {% endfor %}
-        {% endfor %}
+        {% endfor %#}
 
         <div>
             {% block fos_user_content %}

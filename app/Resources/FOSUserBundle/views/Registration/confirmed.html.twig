@@ -3,9 +3,25 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block fos_user_content %}
-    <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
-    {% if app.session is not empty %}
-        {% set targetUrl = app.session.get('_security.' ~ app.security.token.providerKey ~ '.target_path') %}
-        {% if targetUrl is not empty %}<p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>{% endif %}
-    {% endif %}
+
+<div class="block">
+<div id="loginModal" class="centered">
+  <div class="modal-body">
+    <div class="well">
+      
+      <div id="myTabContent" class="tab-content">
+        <div class="tab-pane active in" id="create">
+          <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
+          <p>Para continuar haz click <a href="{{ path('homepage') }}">aquí</a></p>
+          {% if app.session is not empty %}
+            {% set targetUrl = app.session.get('_security.' ~ app.security.token.providerKey ~ '.target_path') %}
+            {% if targetUrl is not empty %}<p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>{% endif %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
 {% endblock fos_user_content %}
