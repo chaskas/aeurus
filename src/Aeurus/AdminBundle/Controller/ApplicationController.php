@@ -45,7 +45,6 @@ class ApplicationController extends Controller
     public function createAction(Request $request)
     {
         $entity  = new Application();
-        $entity->setUser($this->get('security.context')->getToken()->getUser());
         $form = $this->createForm(new ApplicationType(), $entity);
         $form->bind($request);
 

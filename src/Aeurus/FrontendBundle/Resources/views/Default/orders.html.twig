@@ -1,0 +1,50 @@
+{% extends '::base_frontend.html.twig' %}
+
+{% block body -%}
+
+<header class="page-header">
+
+    <div class="description">
+        <p class="lead">
+            <span>Ordenes</span>
+        </p>
+    </div>
+    <div class="actions">
+      <div class="btn-toolbar">
+        <div class="btn-group pull-right mBottom">
+          <a href="{{ path('homepage') }}" class="btn btn-success">Nueva</a>
+        </div>
+      </div>
+    </div>
+</header>
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Número</th>
+            <th>Descripción</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+    {% for entity in entities %}
+    <tr>
+        <td class="center">
+            <a href="{{ path('order_step_2', { 'id': entity.id }) }}">{{ entity.id }}</a>
+        </td>
+        <td>
+
+        </td>
+        <td>
+            <a href="{{ path('order_step_2', { 'id': entity.id }) }}">
+                <img src="{{ asset('img/icons/edit.png') }}" alt="Editar" />
+            </a>
+            <a href="#" onclick="return confirm('¿Está seguro?');">
+                <img src="{{ asset('img/icons/trash.png') }}" alt="Eliminar" />
+            </a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

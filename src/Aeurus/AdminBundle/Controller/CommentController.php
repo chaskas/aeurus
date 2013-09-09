@@ -7,20 +7,20 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Aeurus\AdminBundle\Entity\Theme;
-use Aeurus\AdminBundle\Form\ThemeType;
+use Aeurus\AdminBundle\Entity\Comment;
+use Aeurus\AdminBundle\Form\CommentType;
 
 /**
- * Theme controller.
+ * Comment controller.
  *
- * @Route("/theme")
+ * @Route("/comment")
  */
-class ThemeController extends Controller
+class CommentController extends Controller
 {
     /**
-     * Lists all Theme entities.
+     * Lists all Comment entities.
      *
-     * @Route("/", name="admin_theme")
+     * @Route("/", name="comment")
      * @Method("GET")
      * @Template()
      */
@@ -28,7 +28,7 @@ class ThemeController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('AeurusAdminBundle:Theme')->findAll();
+        $entities = $em->getRepository('AeurusAdminBundle:Comment')->findAll();
 
         return array(
             'entities' => $entities,
@@ -36,25 +36,24 @@ class ThemeController extends Controller
     }
 
     /**
-     * Creates a new Theme entity.
+     * Creates a new Comment entity.
      *
-     * @Route("/", name="admin_theme_create")
+     * @Route("/", name="comment_create")
      * @Method("POST")
-     * @Template("AeurusAdminBundle:Theme:new.html.twig")
+     * @Template("AeurusAdminBundle:Comment:new.html.twig")
      */
     public function createAction(Request $request)
     {
-        $entity  = new Theme();
-        $form = $this->createForm(new ThemeType(), $entity);
+        $entity  = new Comment();
+        $form = $this->createForm(new CommentType(), $entity);
         $form->bind($request);
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('admin_theme_edit', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('comment_show', array('id' => $entity->getId())));
         }
 
         return array(
@@ -64,16 +63,16 @@ class ThemeController extends Controller
     }
 
     /**
-     * Displays a form to create a new Theme entity.
+     * Displays a form to create a new Comment entity.
      *
-     * @Route("/new", name="admin_theme_new")
+     * @Route("/new", name="comment_new")
      * @Method("GET")
      * @Template()
      */
     public function newAction()
     {
-        $entity = new Theme();
-        $form   = $this->createForm(new ThemeType(), $entity);
+        $entity = new Comment();
+        $form   = $this->createForm(new CommentType(), $entity);
 
         return array(
             'entity' => $entity,
@@ -82,9 +81,34 @@ class ThemeController extends Controller
     }
 
     /**
-     * Displays a form to edit an existing Theme entity.
+     * Finds and displays a Comment entity.
      *
-     * @Route("/{id}/edit", name="admin_theme_edit")
+     * @Route("/{id}", name="comment_show")
+     * @Method("GET")
+     * @Template()
+     */
+    public function showAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('AeurusAdminBundle:Comment')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Comment entity.');
+        }
+
+        $deleteForm = $this->createDeleteForm($id);
+
+        return array(
+            'entity'      => $entity,
+            'delete_form' => $deleteForm->createView(),
+        );
+    }
+
+    /**
+     * Displays a form to edit an existing Comment entity.
+     *
+     * @Route("/{id}/edit", name="comment_edit")
      * @Method("GET")
      * @Template()
      */
@@ -92,13 +116,13 @@ class ThemeController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AeurusAdminBundle:Theme')->find($id);
+        $entity = $em->getRepository('AeurusAdminBundle:Comment')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Theme entity.');
+            throw $this->createNotFoundException('Unable to find Comment entity.');
         }
 
-        $editForm = $this->createForm(new ThemeType(), $entity);
+        $editForm = $this->createForm(new CommentType(), $entity);
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
@@ -109,31 +133,31 @@ class ThemeController extends Controller
     }
 
     /**
-     * Edits an existing Theme entity.
+     * Edits an existing Comment entity.
      *
-     * @Route("/{id}", name="admin_theme_update")
+     * @Route("/{id}", name="comment_update")
      * @Method("PUT")
-     * @Template("AeurusAdminBundle:Theme:edit.html.twig")
+     * @Template("AeurusAdminBundle:Comment:edit.html.twig")
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AeurusAdminBundle:Theme')->find($id);
+        $entity = $em->getRepository('AeurusAdminBundle:Comment')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Theme entity.');
+            throw $this->createNotFoundException('Unable to find Comment entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
-        $editForm = $this->createForm(new ThemeType(), $entity);
+        $editForm = $this->createForm(new CommentType(), $entity);
         $editForm->bind($request);
 
         if ($editForm->isValid()) {
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('admin_theme_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('comment_edit', array('id' => $id)));
         }
 
         return array(
@@ -144,9 +168,9 @@ class ThemeController extends Controller
     }
 
     /**
-     * Deletes a Theme entity.
+     * Deletes a Comment entity.
      *
-     * @Route("/{id}", name="admin_theme_delete")
+     * @Route("/{id}", name="comment_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, $id)
@@ -156,21 +180,21 @@ class ThemeController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('AeurusAdminBundle:Theme')->find($id);
+            $entity = $em->getRepository('AeurusAdminBundle:Comment')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Theme entity.');
+                throw $this->createNotFoundException('Unable to find Comment entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('admin_theme'));
+        return $this->redirect($this->generateUrl('comment'));
     }
 
     /**
-     * Creates a form to delete a Theme entity by id.
+     * Creates a form to delete a Comment entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -183,5 +207,4 @@ class ThemeController extends Controller
             ->getForm()
         ;
     }
-
 }

@@ -36,13 +36,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </a>
-              <a class="brand" href="#">Aeurus
+              <a class="brand" href="{{ path('homepage') }}">Aeurus
               </a>
               {% if is_granted('IS_AUTHENTICATED_FULLY') %}
               <div class="nav-collapse">
                 <ul class="nav">
                   <li><a href="#">Bienvenido {{ app.user.FirstName }}</a></li>
-                  <li><a href="#">Mis ordenes</a></li>
+                  <li><a href="{{ path('orders') }}">Mis ordenes</a></li>
                   <li><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>
                 </ul>
               </div>
@@ -57,10 +57,16 @@
           </div>
         </div>
             
+        <div id="page" class="container">
+          <div class="row">
+            {% block body %}
 
-        {% block body %}
 
-        {% endblock %}
+            {% endblock %}
+          </div>
+        </div>
+        
+
 
     </body>
 </html>

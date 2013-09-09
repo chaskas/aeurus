@@ -37,9 +37,6 @@
 {% block body -%}
 
 
-
-  <div id="page" class="container">
-
     <form action="{{ path('order_step_1') }}" method="post" {{ form_enctype(form) }}>
 
 
@@ -50,13 +47,7 @@
           <span>Selecciona las plantillas que te gusten:</span>
         </p>
       </div>
-      <div class="actions">
-        <div class="btn-toolbar">
-          <div class="btn-group pull-right mBottom">
-            <button type="submit" class="btn btn-success"> Siguiente </button>
-          </div>
-        </div>
-      </div>
+      
 
     </header>
 
@@ -66,15 +57,26 @@
       {% endfor %}
     </div>
 
-        {{ form_errors(form) }}
+    {{ form_errors(form) }}
 
-        {{ form_label(form.themes) }}
-        {{ form_errors(form.themes) }}
-        {{ form_widget(form.themes) }}
+    {{ form_label(form.description) }}
+    {{ form_errors(form.description) }}
+    {{ form_widget(form.description,{ 'attr': {'class': 'input-xxlarge'} }) }}
 
-        {{ form_rest(form) }}
+    <div class="actions">
+      <div class="btn-toolbar">
+        <div class="btn-group pull-right mBottom">
+          <button type="submit" class="btn btn-success"> Siguiente </button>
+        </div>
+      </div>
+    </div>
 
-  </div>
+    {{ form_errors(form.themes) }}
+    {{ form_widget(form.themes) }}
+
+    {{ form_rest(form) }}
+
+
 
   <script>
     $(window).ready(function(){

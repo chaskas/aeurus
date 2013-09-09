@@ -1,0 +1,59 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <div class="content pure-g">
+        <div class="content-header pure-g">
+            <div class="pure-u-1-2">
+                <h1 class="content-title">Usuarios</h1>
+                <p class="content-subtitle">
+                    Listado de usuarios al <span>{{ "now"|date("d/M/Y") }}</span>
+                </p>
+            </div>
+            {#
+            <div class="pure-u-1-2 content-controls">
+                <a class="pure-button secondary-button" href="{{ path('admin_tag_new') }}">Nuevo</a>
+                <!-- <a class="pure-button secondary-button">Exportar a Excel</a> -->
+            </div>
+            #}
+        </div>
+        <div class="content-body pure-u-1">
+            <table class="pure-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for entity in entities %}
+                    <tr {{  cycle(['class=pure-table-odd', ''] , loop.index)  }}>
+                        <td>
+                            {{ entity.firstName }}
+                        </td>
+                        <td>
+                            {{ entity.lastName }}
+                        </td>
+                        <td>
+                            {{ entity.username }}
+                        </td>
+                        <td>
+                            {{ entity.email }}
+                        </td>
+                        <td>
+                            <a href="#">
+                                <img src="{{ asset('img/icons/edit.png') }}" alt="Editar" />
+                            </a>
+                            <a href="#" onclick="return confirm('¿Está seguro?');">
+                                <img src="{{ asset('img/icons/trash.png') }}" alt="Eliminar" />
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>    
+{% endblock %}

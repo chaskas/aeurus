@@ -4,7 +4,7 @@ namespace Aeurus\AdminBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class ThemeControllerTest extends WebTestCase
+class CommentControllerTest extends WebTestCase
 {
     /*
     public function testCompleteScenario()
@@ -13,13 +13,13 @@ class ThemeControllerTest extends WebTestCase
         $client = static::createClient();
 
         // Create a new entry in the database
-        $crawler = $client->request('GET', '/theme/');
-        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /theme/");
+        $crawler = $client->request('GET', '/comment/');
+        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /comment/");
         $crawler = $client->click($crawler->selectLink('Create a new entry')->link());
 
         // Fill in the form and submit it
         $form = $crawler->selectButton('Create')->form(array(
-            'aeurus_adminbundle_themetype[field_name]'  => 'Test',
+            'aeurus_adminbundle_commenttype[field_name]'  => 'Test',
             // ... other fields to fill
         ));
 
@@ -33,7 +33,7 @@ class ThemeControllerTest extends WebTestCase
         $crawler = $client->click($crawler->selectLink('Edit')->link());
 
         $form = $crawler->selectButton('Edit')->form(array(
-            'aeurus_adminbundle_themetype[field_name]'  => 'Foo',
+            'aeurus_adminbundle_commenttype[field_name]'  => 'Foo',
             // ... other fields to fill
         ));
 

@@ -97,4 +97,22 @@ class DefaultController extends Controller
             'entity'      => $entity,
         );
     }
+
+    /**
+     * Lists all Application entities.
+     *
+     * @Route("/orders", name="orders")
+     * @Method("GET")
+     * @Template()
+     */
+    public function ordersAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('AeurusAdminBundle:Application')->findByUser($this->get('security.context')->getToken()->getUser());
+
+        return array(
+            'entities' => $entities,
+        );
+    }
 }

@@ -21,6 +21,20 @@ class Comment
      */
     private $id;
 
+    /**
+     * @var \Doctrine\Common\Collections\ArrayCollection $applications
+     * 
+     * @ORM\ManyToOne(targetEntity="Application", cascade={"all"})
+     */
+    protected $applications;
+
+    /**
+     * @var string
+     * 
+     * @ORM\Column(name="description", type="string", nullable=false)
+     */
+    protected $description;
+
 
     /**
      * Get id
@@ -30,5 +44,29 @@ class Comment
     public function getId()
     {
         return $this->id;
+    }
+
+
+    /**
+     * Set applications
+     *
+     * @param \Aeurus\AdminBundle\Entity\Application $applications
+     * @return Comment
+     */
+    public function setApplications(\Aeurus\AdminBundle\Entity\Application $applications = null)
+    {
+        $this->applications = $applications;
+
+        return $this;
+    }
+
+    /**
+     * Get applications
+     *
+     * @return \Aeurus\AdminBundle\Entity\Application 
+     */
+    public function getApplications()
+    {
+        return $this->applications;
     }
 }

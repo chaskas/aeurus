@@ -4,6 +4,8 @@ namespace Aeurus\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Aeurus\AdminBundle\Entity\ApplicationTheme;
+
 /**
  * Application
  *
@@ -27,19 +29,30 @@ class Application
      */
     protected $user;
 
-    
+    /**
+     * @var string
+     * @ORM\Column(name="description", type="string")
+     */
+    protected $description;
 
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection $themes
      * 
      * @ORM\ManyToMany(targetEntity="Aeurus\AdminBundle\Entity\Theme", inversedBy="applications")
-     * @ORM\JoinTable(name="application_theme",
+     * @ORM\JoinTable(name="ApplicationTheme",
      *     joinColumns={@ORM\JoinColumn(name="application_id", referencedColumnName="id")},
      *     inverseJoinColumns={@ORM\JoinColumn(name="theme_id", referencedColumnName="id")}
      * )
      * 
      */
     protected $themes;
+
+    /**
+     * @var \Doctrine\Common\Collections\ArrayCollection $comments
+     * 
+     * @ORM\OneToMany(targetEntity="Comment",mappedBy="application")
+     */
+    protected $comments;
 
 
     /**
@@ -74,6 +87,7 @@ class Application
     {
         return $this->user;
     }
+
     /**
      * Constructor
      */
@@ -82,37 +96,33 @@ class Application
         $this->themes = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return $this->description;
+    }
+
+
     /**
-     * Add applications
+     * Set description
      *
-     * @param \Aeurus\AdminBundle\Entity\Theme $applications
+     * @param string $description
      * @return Application
      */
-    public function addApplication(\Aeurus\AdminBundle\Entity\Theme $applications)
+    public function setDescription($description)
     {
-        $this->applications[] = $applications;
+        $this->description = $description;
 
         return $this;
     }
 
     /**
-     * Remove applications
+     * Get description
      *
-     * @param \Aeurus\AdminBundle\Entity\Theme $applications
+     * @return string 
      */
-    public function removeApplication(\Aeurus\AdminBundle\Entity\Theme $applications)
+    public function getDescription()
     {
-        $this->applications->removeElement($applications);
-    }
-
-    /**
-     * Get applications
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getApplications()
-    {
-        return $this->applications;
+        return $this->description;
     }
 
     /**
@@ -146,5 +156,38 @@ class Application
     public function getThemes()
     {
         return $this->themes;
+    }
+
+    /**
+     * Add comments
+     *
+     * @param \Aeurus\AdminBundle\Entity\Comment $comments
+     * @return Application
+     */
+    public function addComment(\Aeurus\AdminBundle\Entity\Comment $comments)
+    {
+        $this->comments[] = $comments;
+
+        return $this;
+    }
+
+    /**
+     * Remove comments
+     *
+     * @param \Aeurus\AdminBundle\Entity\Comment $comments
+     */
+    public function removeComment(\Aeurus\AdminBundle\Entity\Comment $comments)
+    {
+        $this->comments->removeElement($comments);
+    }
+
+    /**
+     * Get comments
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getComments()
+    {
+        return $this->comments;
     }
 }

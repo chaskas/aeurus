@@ -51,7 +51,6 @@ class Theme
      */
     protected $tags;
 
-
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection $applications
      * 
@@ -59,6 +58,8 @@ class Theme
      * 
      */
     protected $applications;
+    
+
 
     public function __toString()
     {
@@ -70,7 +71,8 @@ class Theme
      */
     public function __construct()
     {
-        $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->tags     = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->themes   = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
     /**
@@ -301,6 +303,8 @@ class Theme
     {
         return $this->path;
     }
+
+    
 
     /**
      * Add applications

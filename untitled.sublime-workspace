@@ -1,0 +1,352 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"login",
+				"login-wrapper1"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"local",
+				"localhost"
+			],
+			[
+				"on",
+				"onDelete"
+			],
+			[
+				"Opo",
+				"OportunidadCMR"
+			],
+			[
+				"a",
+				"aplicacion"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 67.0,
+		"selected_items":
+		[
+			[
+				"twig",
+				"Set Syntax: HTML (Twig)"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"hml",
+				"Set Syntax: HTML"
+			],
+			[
+				"synh",
+				"Set Syntax: HTML"
+			],
+			[
+				"syhtml",
+				"Set Syntax: HTML"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/chaskas/Desktop/dev/projects/aeurus/web/css/theme.css",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/app/config/parameters.yml",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Entity/User.php",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/app/Resources/FOSUserBundle/views/Security/login.html.twig",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/app/Resources/views/base_frontend.html.twig",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/FrontendBundle/Resources/views/Default/show.html.twig",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/app/Resources/FOSUserBundle/views/layout.html.twig",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/FrontendBundle/Controller/DefaultController.php",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/FrontendBundle/Resources/views/Default/index.html.twig",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/app/Resources/FOSUserBundle/views/login.html.twig.html",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/views/Security/login.html.twig",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/app/config/security.yml",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Controller/ApplicationController.php",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/app/config/config.yml",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Entity/Application.php",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Entity/Theme.php",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Form/ApplicationType.php",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Resources/views/Application/show.html.twig",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Controller/ThemeController.php",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Form/ThemeType.php",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Resources/views/Theme/new.html.twig",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Entity/Tag.php",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/web/css/main.css",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/db.sql",
+		"/Users/chaskas/Desktop/dev/projects/sibudec/sibudec/app/Resources/views/front.html.twig",
+		"/Users/chaskas/Desktop/dev/projects/sibudec/sibudec/src/Sibudec/FrontBundle/Resources/views/base.html.twig",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant-guia-maestra/apps/admin/modules/test/actions/aritmetica.wsdl",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant-guia-maestra/config/properties.ini",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant-catalogos/config/database.yml",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant-catalogos/app/models/catalogo.rb",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant-catalogos/app/controllers/catalogos_controller.rb",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant-catalogos/app/views/catalogos/show.html.erb",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant-catalogos/app/views/catalogos/_form.html.erb",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant-catalogos/app/uploaders/image_uploader.rb",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant-catalogos/Gemfile",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant-catalogos/app/views/catalogos/show.json.jbuilder",
+		"/Users/chaskas/Desktop/mauri.cpp",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant-catalogos/app/views/catalogos/index.json.jbuilder",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant-catalogos/app/uploaders/portada_uploader.rb",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/config/doctrine/schema.yml",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/apps/admin/modules/Pais/templates/indexSuccess.php",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/apps/admin/modules/Region/templates/indexSuccess.php",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/apps/admin/config/routing.yml",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/web/admin/.htaccess",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/apps/admin/modules/Funcion/templates/indexSuccess.php",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/apps/admin/modules/Aplicacion/templates/indexSuccess.php",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/apps/admin/modules/EndPoint/templates/indexSuccess.php",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/apps/admin/modules/Servicios/templates/indexSuccess.php",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/apps/admin/modules/TipoTienda/templates/indexSuccess.php",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/apps/admin/modules/Tiendas/templates/indexSuccess.php",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/apps/admin/modules/Tiendas/templates/editSuccess.php",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/apps/admin/modules/Tiendas/actions/actions.class.php",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/apps/admin/modules/Respuestas/templates/indexSuccess.php",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/apps/admin/modules/CabeceraRespuestas/templates/indexSuccess.php",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/apps/admin/modules/TipoPregunta/templates/indexSuccess.php",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/apps/admin/modules/Preguntas/templates/indexSuccess.php",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/lib/model/doctrine/EncuestaPreguntas.class.php",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/lib/model/doctrine/TipoPregunta.class.php",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/web/css/styles.css",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/apps/admin/modules/OportunidadCMR/templates/indexSuccess.php",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/apps/admin/modules/OportunidadCMR/actions/actions.class.php",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/apps/admin/modules/Aplicacion/actions/actions.class.php",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/apps/admin/modules/Aplicacion/templates/editSuccess.php",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/apps/admin/modules/Funcion/templates/editSuccess.php",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/apps/admin/modules/Funcion/actions/actions.class.php",
+		"/Users/chaskas/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/data.yml",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/data/fixtures/08_Tienda.yml",
+		"/Users/chaskas/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/data/fixtures/15_FuncionPais.yml",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/data/fixtures/14_AplicacionPais.yml",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/data/fixtures/13_Funcion.yml",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/data/fixtures/12_Aplicacion.yml",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/data/fixtures/11_Endpoint.yml",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/data/fixtures/10_EncuestaRespuestas.yml",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/data/fixtures/09_EncuestaCabeceraRespuestas.yml",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/data/fixtures/07_ServiciosPorTienda.yml",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/data/fixtures/06_TipoTienda.yml",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/data/fixtures/05_TipoPregunta.yml",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/data/fixtures/04_ServiciosTienda.yml",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/data/fixtures/03_Region.yml",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/data/fixtures/02_OportunidadCmr.yml",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/data/fixtures/00_Pais.yml",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/data/fixtures/01_EncuestaPreguntas.yml",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/apps/frontend/modules/api/actions/actions.class.php",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/apps/frontend/modules/api/templates/getTiendaByIdSuccess.json.php",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/apps/frontend/modules/api/templates/getTiendasSuccess.json.php",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/apps/frontend/modules/api/templates/getTiendaByIdSuccess.xml.php",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/apps/frontend/modules/api/templates/getTiendasSuccess.xml.php",
+		"/Users/chaskas/Desktop/dev/projects/sodimac/mant_app/apps/frontend/modules/api/templates/getRegionesSuccess.json.php",
+		"/Library/WebServer/Documents/index.html.en",
+		"/Library/WebServer/Documents/index.php",
+		"/private/etc/apache2/extra/httpd-vhosts.conf"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			";\n",
+			"apellido",
+			"nombre",
+			"username",
+			"plainPassword.second",
+			"plainPassword.first",
+			"username",
+			"\">\n",
+			"user",
+			"entity",
+			"{\n",
+			"id",
+			"\") ",
+			"_application_themasse_row",
+			"name",
+			"tags",
+			"order",
+			"//$",
+			"nuevo",
+			"http",
+			"get",
+			"image",
+			"save(",
+			"(\n",
+			"s",
+			"Pais",
+			"pais",
+			"Pais",
+			"pais",
+			"Pais",
+			"id",
+			"Funcion",
+			"funcion",
+			"Id",
+			"id",
+			"Aplicacion",
+			"aplicacion",
+			"endpoint",
+			"getIdEndpoint",
+			"Servicios",
+			"id_servicio_tienda",
+			"servicio",
+			"endpoint",
+			"getIdServicioTienda",
+			"id_servicio_tienda",
+			"id_tipo_tienda",
+			"TipoTienda",
+			"tipo",
+			"getIdTipoTienda",
+			"id_tipo_tienda",
+			"tienda",
+			"getIdTienda",
+			"id_tienda",
+			"app_pais",
+			"id_enc_resp",
+			"getIdEncResp",
+			"respuesta",
+			"id_enc_resp",
+			"id_enc_cab_resp",
+			"getIdEncCabResp",
+			"cabecera",
+			"CabeceraRespuestas",
+			"Respuestas",
+			"getIdTipoPreg",
+			"Tipo",
+			"tipo",
+			"id_tipo_preg",
+			"Preguntas",
+			"getIdEncPreg",
+			"pregunta",
+			"OportunidadCMR",
+			"Aplicacion",
+			"endpoint",
+			"line",
+			"delete",
+			"Oportunidad",
+			"Pais:"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"sfdoctrinere",
+				"lib/vendor/symfony/lib/plugins/sfDoctrinePlugin/lib/record/sfDoctrineRecord.class.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 325.0,
+	"status_bar_visible": true
+}
