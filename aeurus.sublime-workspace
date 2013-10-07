@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"Applica",
+				"ApplicationTheme"
+			],
+			[
 				"login",
 				"login-wrapper1"
 			],
@@ -35,7 +39,7 @@
 			"file": "src/Aeurus/FrontendBundle/Resources/views/Default/index.html.twig",
 			"settings":
 			{
-				"buffer_size": 3553,
+				"buffer_size": 3350,
 				"line_ending": "Unix"
 			}
 		},
@@ -43,7 +47,23 @@
 			"file": "src/Aeurus/FrontendBundle/Resources/views/Default/show.html.twig",
 			"settings":
 			{
-				"buffer_size": 1621,
+				"buffer_size": 1449,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "web/css/theme.css",
+			"settings":
+			{
+				"buffer_size": 2660,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Aeurus/FrontendBundle/Resources/views/Default/orders.html.twig",
+			"settings":
+			{
+				"buffer_size": 1265,
 				"line_ending": "Unix"
 			}
 		}
@@ -92,26 +112,39 @@
 	},
 	"file_history":
 	[
-		"/Users/chaskas/Desktop/dev/projects/aeurus/app/Resources/views/base_frontend.html.twig",
-		"/Users/chaskas/Desktop/dev/projects/aeurus/app/Resources/FOSUserBundle/views/Security/login.html.twig",
 		"/Users/chaskas/Desktop/dev/projects/aeurus/app/Resources/FOSUserBundle/views/layout.html.twig",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/app/Resources/FOSUserBundle/views/Registration/confirmed.html.twig",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Form/ApplicationType.php",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/app/Resources/FOSUserBundle/views/Security/login.html.twig",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/app/config/routing.yml",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/app/config/security.yml",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/FrontendBundle/Resources/views/Default/orders.html.twig",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Entity/Comment.php",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Form/CommentType.php",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Entity/Application.php",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Resources/views/Comment/index.html.twig",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Entity/Tag.php",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Resources/views/Theme/index.html.twig",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Resources/views/Theme/new.html.twig",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Resources/views/Theme/edit.html.twig",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Controller/ThemeController.php",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/FrontendBundle/Resources/views/Default/index.html.twig",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Entity/Theme.php",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/FrontendBundle/Controller/DefaultController.php",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Entity/ApplicationTheme.php",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/FrontendBundle/Resources/views/Default/show.html.twig",
 		"/Users/chaskas/Desktop/dev/projects/aeurus/web/css/theme.css",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/app/Resources/views/base_frontend.html.twig",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/app/Resources/views/base.html.twig",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Controller/UserController.php",
+		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Resources/views/User/index.html.twig",
 		"/Users/chaskas/Desktop/dev/projects/aeurus/app/Resources/FOSUserBundle/views/login.html.twig.html",
 		"/Users/chaskas/Desktop/dev/projects/aeurus/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/views/Security/login.html.twig",
-		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/FrontendBundle/Controller/DefaultController.php",
-		"/Users/chaskas/Desktop/dev/projects/aeurus/app/config/security.yml",
-		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/FrontendBundle/Resources/views/Default/index.html.twig",
 		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Controller/ApplicationController.php",
-		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/FrontendBundle/Resources/views/Default/show.html.twig",
 		"/Users/chaskas/Desktop/dev/projects/aeurus/app/config/config.yml",
-		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Entity/Application.php",
-		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Entity/Theme.php",
-		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Form/ApplicationType.php",
 		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Resources/views/Application/show.html.twig",
-		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Controller/ThemeController.php",
 		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Form/ThemeType.php",
-		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Resources/views/Theme/new.html.twig",
-		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Entity/Tag.php",
 		"/Users/chaskas/Desktop/dev/projects/aeurus/src/Aeurus/AdminBundle/Entity/User.php",
 		"/Users/chaskas/Desktop/dev/projects/aeurus/web/css/main.css",
 		"/Users/chaskas/Desktop/dev/projects/aeurus/db.sql",
@@ -203,6 +236,19 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"name",
+			"themes",
+			"tags",
+			"themes",
+			"products",
+			"themes",
+			"applications",
+			"themes",
+			"products",
+			"application",
+			"themes",
+			"private",
+			"themes",
 			"user",
 			"entity",
 			"{\n",
@@ -289,7 +335,6 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
 				{
@@ -297,15 +342,15 @@
 					"file": "src/Aeurus/FrontendBundle/Resources/views/Default/index.html.twig",
 					"settings":
 					{
-						"buffer_size": 3553,
+						"buffer_size": 3350,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								41,
-								41
+								3331,
+								2224
 							]
 						],
 						"settings":
@@ -315,7 +360,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 866.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -325,15 +370,15 @@
 					"file": "src/Aeurus/FrontendBundle/Resources/views/Default/show.html.twig",
 					"settings":
 					{
-						"buffer_size": 1621,
+						"buffer_size": 1449,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1204,
-								1204
+								1387,
+								1387
 							]
 						],
 						"settings":
@@ -343,7 +388,63 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 176.0,
+						"translation.y": 99.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "web/css/theme.css",
+					"settings":
+					{
+						"buffer_size": 2660,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2658,
+								2658
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1346.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/Aeurus/FrontendBundle/Resources/views/Default/orders.html.twig",
+					"settings":
+					{
+						"buffer_size": 1265,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								838,
+								838
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

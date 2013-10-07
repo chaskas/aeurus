@@ -11,6 +11,9 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Aeurus\AdminBundle\Entity\Application;
 use Aeurus\AdminBundle\Form\ApplicationType;
 
+use Aeurus\AdminBundle\Entity\Comment;
+use Aeurus\AdminBundle\Form\CommentType;
+
 class DefaultController extends Controller
 {
 
@@ -89,12 +92,48 @@ class DefaultController extends Controller
 
         $entity = $em->getRepository('AeurusAdminBundle:Application')->find($id);
 
+        $comment = new Comment();
+        $comment->setApplications($entity);
+        $form   = $this->createForm(new CommentType(), $comment);
+
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Application entity.');
         }
 
         return array(
+            'comment' => $comment,
+            'form'   => $form->createView(),
             'entity'      => $entity,
+        );
+    }
+
+    /**
+     * Creates a new Comment entity.
+     *
+     * @Route("/order", name="front_comment_create")
+     * @Method("POST")
+     * @Template("AeurusFrontendBundle:Comment:show.html.twig")
+     */
+    public function createCommentAction(Request $request)
+    {
+        $entity  = new Comment();
+
+        $form = $this->createForm(new CommentType(), $entity);
+        $form->bind($request);
+
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($entity);
+            $em->flush();
+
+            $apps = $entity->getApplications();
+
+
+            return $this->redirect($this->generateUrl('order_step_2', array('id' => 3)));
+        }
+
+        return array(
+            'entity' => $entity,
         );
     }
 

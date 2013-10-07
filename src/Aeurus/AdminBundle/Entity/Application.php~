@@ -50,7 +50,7 @@ class Application
     /**
      * @var \Doctrine\Common\Collections\ArrayCollection $comments
      * 
-     * @ORM\OneToMany(targetEntity="Comment",mappedBy="application")
+     * @ORM\OneToMany(targetEntity="Comment",mappedBy="applications")
      */
     protected $comments;
 

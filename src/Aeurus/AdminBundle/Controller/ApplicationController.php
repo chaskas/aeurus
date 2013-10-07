@@ -20,7 +20,7 @@ class ApplicationController extends Controller
     /**
      * Lists all Application entities.
      *
-     * @Route("/", name="application")
+     * @Route("/", name="admin_application")
      * @Method("GET")
      * @Template()
      */
@@ -38,7 +38,7 @@ class ApplicationController extends Controller
     /**
      * Creates a new Application entity.
      *
-     * @Route("/", name="application_create")
+     * @Route("/", name="admin_application_create")
      * @Method("POST")
      * @Template("AeurusAdminBundle:Application:new.html.twig")
      */
@@ -65,7 +65,7 @@ class ApplicationController extends Controller
     /**
      * Displays a form to create a new Application entity.
      *
-     * @Route("/new", name="application_new")
+     * @Route("/new", name="admin_application_new")
      * @Method("GET")
      * @Template()
      */
@@ -83,7 +83,7 @@ class ApplicationController extends Controller
     /**
      * Finds and displays a Application entity.
      *
-     * @Route("/{id}", name="application_show")
+     * @Route("/{id}", name="admin_application_show")
      * @Method("GET")
      * @Template()
      */
@@ -108,7 +108,7 @@ class ApplicationController extends Controller
     /**
      * Displays a form to edit an existing Application entity.
      *
-     * @Route("/{id}/edit", name="application_edit")
+     * @Route("/{id}/edit", name="admin_application_edit")
      * @Method("GET")
      * @Template()
      */
@@ -135,7 +135,7 @@ class ApplicationController extends Controller
     /**
      * Edits an existing Application entity.
      *
-     * @Route("/{id}", name="application_update")
+     * @Route("/{id}", name="admin_application_update")
      * @Method("PUT")
      * @Template("AeurusAdminBundle:Application:edit.html.twig")
      */
@@ -170,7 +170,7 @@ class ApplicationController extends Controller
     /**
      * Deletes a Application entity.
      *
-     * @Route("/{id}", name="application_delete")
+     * @Route("/{id}", name="admin_application_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, $id)

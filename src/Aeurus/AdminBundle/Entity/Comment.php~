@@ -31,7 +31,7 @@ class Comment
     /**
      * @var string
      * 
-     * @ORM\Column(name="description", type="string", nullable=false)
+     * @ORM\Column(name="description", type="string", unique=false, nullable=false)
      */
     protected $description;
 
@@ -68,5 +68,28 @@ class Comment
     public function getApplications()
     {
         return $this->applications;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     * @return Comment
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string 
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }

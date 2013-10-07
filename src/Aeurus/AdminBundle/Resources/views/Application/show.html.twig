@@ -1,38 +1,49 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Application</h1>
 
-    <table class="record_properties">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ entity.id }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ entity.description }}</td>
-            </tr>
-        </tbody>
-    </table>
+<div class="content pure-g">
+    <div class="content-header pure-g">
+        <div class="pure-u-1-2">
+            <h1 class="content-title">Pedido</h1>
+            <p class="content-subtitle">
+                {{ entity.description }} | Solicitado por: {{ entity.user.firstName  ~ ' ' ~ entity.user.lastName }}
+            </p>
+        </div>
+        <div class="pure-u-1-2 content-controls">
+            <a class="pure-button secondary-button" href="{{ path('admin_application') }}">Volver</a>
+        </div>
+    </div>
+    <div class="content-body pure-g">
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('application') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('application_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>
-        <form action="{{ path('application_delete', { 'id': entity.id }) }}" method="post">
-            <input type="hidden" name="_method" value="DELETE" />
-            {{ form_widget(delete_form) }}
-            <button type="submit">Delete</button>
-        </form>
-    </li>
-</ul>
+        <div class="pure-u-1-5">
+            {% for theme in entity.themes %}
+            <div class="theme item span3">
+                <div class="well">
+                    <h4>
+                        <a href="#">{{  theme.name }}</a>
+                    </h4>
+                    <div class="info">
+                        <a href="#">
+                            <img src="{{ asset( theme.getWebPath ) }}" alt="{{ theme.name }}" width="120"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="pure-u-4-5">
+            <div class="content-title">
+                Comentarios
+            </div>
+            {% for comment in entity.comments %}
+                <blockquote class="content-quote">
+                    {{ comment.description }}
+                </blockquote>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
 {% endblock %}

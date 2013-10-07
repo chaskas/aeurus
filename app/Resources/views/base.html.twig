@@ -43,6 +43,11 @@
                                 </a>
                             </li>
                             <li>
+                                <a href="{{ path('admin_application') }}">
+                                    <span class="label-application"></span>Pedidos
+                                </a>
+                            </li>
+                            <li>
                                 <a href="#">
                                     <span class="label-statistics"></span>Estadísticas
                                 </a>
@@ -51,7 +56,6 @@
                             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                             <li><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>
                             {% endif %}
-                            <li><a href="#">Conf. 2</a></li>
                             {#
                             <li><a href="{{ path('admin_editorial') }}">Editoriales</a></li>
                             <li><a href="{{ path('admin_source') }}">Fuentes</a></li>
