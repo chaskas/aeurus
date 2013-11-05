@@ -14,6 +14,9 @@ use Aeurus\AdminBundle\Form\ApplicationType;
 use Aeurus\AdminBundle\Entity\ThemeQuestion;
 use Aeurus\AdminBundle\Form\ThemeQuestionType;
 
+use Aeurus\AdminBundle\Entity\Receiver;
+use Aeurus\AdminBundle\Form\ReceiverType;
+
 class DefaultController extends Controller
 {
 
@@ -138,11 +141,19 @@ class DefaultController extends Controller
 
         $questions = $em->getRepository('AeurusAdminBundle:ThemeQuestion')->findBy(array('application' => $id, 'theme' => $theme_id));
 
+        $receivers = $em->getRepository('AeurusAdminBundle:Receiver')->findBy(array('application' => $id, 'theme' => $theme_id));
+
+        $receiver = new Receiver();
+        $receiverForm = $this->createForm(new ReceiverType(), $receiver);
+
+
         return array(
             'form'   => $form->createView(),
             'theme' => $theme,
             'application' => $id,
-            'questions' => $questions
+            'questions' => $questions,
+            'receivers' => $receivers,
+            'receiverForm' => $receiverForm->createView()
         );
     }
 
@@ -177,6 +188,51 @@ class DefaultController extends Controller
             $this->get('session')->getFlashBag()->add(
                 'notice',
                 "Has agregado una pregunta!"
+            );
+
+            return $this->redirect($this->generateUrl('application_theme_comments', array('id' => $id, 'theme_id' =>$theme_id)));
+        } else {
+
+            $this->get('session')->getFlashBag()->add(
+                'notice',
+                "Ocurrió un problema."
+            );
+
+        }
+
+    }
+
+    /**
+     * Creates a new Receiver entity.
+     *
+     * @Route("/receiver/create/{id}/{theme_id}", name="frontend_receiver_create")
+     * @Method("POST")
+     * @Template()
+     */
+    public function createReceiverAction(Request $request, $id, $theme_id )
+    {
+        $entity  = new Receiver();
+
+        $em = $this->getDoctrine()->getManager();
+
+        $application = $em->getRepository('AeurusAdminBundle:Application')->find($id);
+        $theme = $em->getRepository('AeurusAdminBundle:Theme')->find($theme_id);
+
+        $entity->setApplication($application);
+        $entity->setTheme($theme);
+
+
+        $form = $this->createForm(new ReceiverType(), $entity);
+        $form->bind($request);
+
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($entity);
+            $em->flush();
+
+            $this->get('session')->getFlashBag()->add(
+                'notice',
+                "Has agregado un destinatario!"
             );
 
             return $this->redirect($this->generateUrl('application_theme_comments', array('id' => $id, 'theme_id' =>$theme_id)));

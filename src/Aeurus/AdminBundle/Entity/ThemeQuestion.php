@@ -51,6 +51,34 @@ class ThemeQuestion
      */
     protected $theme;
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="x1", type="integer", nullable=true)
+     */
+    private $x1;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="y1", type="integer", nullable=true)
+     */
+    private $y1;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="x2", type="integer", nullable=true)
+     */
+    private $x2;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="y2", type="integer", nullable=true)
+     */
+    private $y2;
+
 
     /**
      * Get id
@@ -152,5 +180,97 @@ class ThemeQuestion
     public function getTheme()
     {
         return $this->theme;
+    }
+
+    /**
+     * Set x1
+     *
+     * @param integer $x1
+     * @return ThemeQuestion
+     */
+    public function setX1($x1)
+    {
+        $this->x1 = $x1;
+
+        return $this;
+    }
+
+    /**
+     * Get x1
+     *
+     * @return integer 
+     */
+    public function getX1()
+    {
+        return $this->x1;
+    }
+
+    /**
+     * Set y1
+     *
+     * @param integer $y1
+     * @return ThemeQuestion
+     */
+    public function setY1($y1)
+    {
+        $this->y1 = $y1;
+
+        return $this;
+    }
+
+    /**
+     * Get y1
+     *
+     * @return integer 
+     */
+    public function getY1()
+    {
+        return $this->y1;
+    }
+
+    /**
+     * Set x2
+     *
+     * @param integer $x2
+     * @return ThemeQuestion
+     */
+    public function setX2($x2)
+    {
+        $this->x2 = $x2;
+
+        return $this;
+    }
+
+    /**
+     * Get x2
+     *
+     * @return integer 
+     */
+    public function getX2()
+    {
+        return $this->x2;
+    }
+
+    /**
+     * Set y2
+     *
+     * @param integer $y2
+     * @return ThemeQuestion
+     */
+    public function setY2($y2)
+    {
+        $this->y2 = $y2;
+
+        return $this;
+    }
+
+    /**
+     * Get y2
+     *
+     * @return integer 
+     */
+    public function getY2()
+    {
+        return $this->y2;
     }
 }

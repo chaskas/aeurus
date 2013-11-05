@@ -144,3 +144,12 @@ header div.actions .btn-toolbar {
 #theme-show {
   
 }
+
+.question {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.questionOver {
+    background-color: #ecf0f1;
+}
