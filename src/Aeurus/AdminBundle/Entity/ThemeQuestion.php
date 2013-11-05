@@ -52,6 +52,11 @@ class ThemeQuestion
     protected $theme;
 
     /**
+     * @ORM\OneToMany(targetEntity="OptionAnswer", mappedBy="question")
+     */
+    protected $options;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="x1", type="integer", nullable=true)
@@ -78,6 +83,11 @@ class ThemeQuestion
      * @ORM\Column(name="y2", type="integer", nullable=true)
      */
     private $y2;
+
+    public function __toString()
+    {
+        return $this->getDescription();
+    }
 
 
     /**
@@ -272,5 +282,45 @@ class ThemeQuestion
     public function getY2()
     {
         return $this->y2;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->options = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add options
+     *
+     * @param \Aeurus\AdminBundle\Entity\OptionAnswer $options
+     * @return ThemeQuestion
+     */
+    public function addOption(\Aeurus\AdminBundle\Entity\OptionAnswer $options)
+    {
+        $this->options[] = $options;
+
+        return $this;
+    }
+
+    /**
+     * Remove options
+     *
+     * @param \Aeurus\AdminBundle\Entity\OptionAnswer $options
+     */
+    public function removeOption(\Aeurus\AdminBundle\Entity\OptionAnswer $options)
+    {
+        $this->options->removeElement($options);
+    }
+
+    /**
+     * Get options
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getOptions()
+    {
+        return $this->options;
     }
 }

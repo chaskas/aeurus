@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>{% block title %}Aeurus Themes{% endblock %}</title>
+        {% block stylesheets %}
+            <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+            <link rel="stylesheet" type="text/css" href="{{ asset('css/imgareaselect-default.css') }}" />
+            <link href="{{ asset('bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+            <link href="{{ asset('bootstrap/css/bootstrap-responsive.css') }}" rel="stylesheet">
+
+            <link href="{{ asset('css/theme-responsive.css') }}" rel="stylesheet">
+        {% endblock %}
+        {% block javascripts %}
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+            <script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+            <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('js/jquery.ba-hashchange.min.js') }}"></script>
+            <script src="{{ asset('js/jquery.isotope.min.js') }}"></script>
+            <script src="{{ asset('js/imagesloaded.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('js/jquery.imgareaselect.pack.js') }}"></script>
+        {% endblock %}
+        
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        <div id="page" class="container">
+          <div class="row">
+            {% block body %}
+
+
+            {% endblock %}
+          </div>
+        </div>
+    </body>
+</html>

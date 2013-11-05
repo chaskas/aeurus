@@ -17,6 +17,9 @@ use Aeurus\AdminBundle\Form\ThemeQuestionType;
 use Aeurus\AdminBundle\Entity\Receiver;
 use Aeurus\AdminBundle\Form\ReceiverType;
 
+use Aeurus\AdminBundle\Entity\OptionAnswer;
+use Aeurus\AdminBundle\Form\OptionAnswerType;
+
 class DefaultController extends Controller
 {
 
@@ -245,5 +248,108 @@ class DefaultController extends Controller
 
         }
 
+    }
+
+    /**
+     * Creates a new OptionAnswer entity.
+     *
+     * @Route("/order/{application_id}/theme/{theme_id}/question/{question_id}/option/new", name="question_new_option_answer")
+     * @Method("GET")
+     * @Template()
+     */
+    public function new_option_answerAction($application_id, $theme_id, $question_id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $answer = new OptionAnswer();
+        $form = $this->createForm(new OptionAnswerType(), $answer);
+
+        $question = $em->getRepository('AeurusAdminBundle:ThemeQuestion')->find($question_id);
+
+        return array(
+            'form'   => $form->createView(),
+            'application_id' => $application_id,
+            'theme_id' => $theme_id,
+            'question_id' => $question_id,
+            'question' => $question
+        );
+    }
+
+    /**
+     * Creates a new OptionAnswer entity.
+     *
+     * @Route("/order/{application_id}/theme/{theme_id}/question/{question_id}/option/create", name="question_create_option_answer")
+     * @Method("POST")
+     * @Template()
+     */
+    public function createOptionAnswerAction(Request $request, $application_id, $theme_id, $question_id )
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = new OptionAnswer();
+
+        $question = $em->getRepository('AeurusAdminBundle:ThemeQuestion')->find($question_id);
+
+        $entity->setQuestion($question);
+
+
+        $form = $this->createForm(new OptionAnswerType(), $entity);
+        $form->bind($request);
+
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($entity);
+            $em->flush();
+
+            $this->get('session')->getFlashBag()->add(
+                'notice',
+                "Has agregado una opción!"
+            );
+
+            return $this->redirect($this->generateUrl('application_theme_comments', array('id' => $application_id, 'theme_id' =>$theme_id)));
+        } else {
+
+            $this->get('session')->getFlashBag()->add(
+                'notice',
+                "Ocurrió un problema."
+            );
+
+        }
+
+    }
+
+    /**
+     * Show the survey of an theme application.
+     *
+     * @Route("/order/{application_id}/theme/{theme_id}/survey", name="survey")
+     * @Method("GET")
+     * @Template()
+     */
+    public function surveyAction($application_id,$theme_id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $theme = $em->getRepository('AeurusAdminBundle:Theme')->find($theme_id);
+
+        $question = new ThemeQuestion();
+
+        $form   = $this->createForm(new ThemeQuestionType(), $question);
+
+        $questions = $em->getRepository('AeurusAdminBundle:ThemeQuestion')->findBy(array('application' => $application_id, 'theme' => $theme_id));
+
+        $receivers = $em->getRepository('AeurusAdminBundle:Receiver')->findBy(array('application' => $application_id, 'theme' => $theme_id));
+
+        $receiver = new Receiver();
+        $receiverForm = $this->createForm(new ReceiverType(), $receiver);
+
+
+        return array(
+            'form'   => $form->createView(),
+            'theme' => $theme,
+            'application' => $application_id,
+            'questions' => $questions,
+            'receivers' => $receivers,
+            'receiverForm' => $receiverForm->createView()
+        );
     }
 }

@@ -77,4 +77,50 @@ class Receiver
     {
         return $this->email;
     }
+
+    /**
+     * Set application
+     *
+     * @param \Aeurus\AdminBundle\Entity\Application $application
+     * @return Receiver
+     */
+    public function setApplication(\Aeurus\AdminBundle\Entity\Application $application)
+    {
+        $this->application = $application;
+
+        return $this;
+    }
+
+    /**
+     * Get application
+     *
+     * @return \Aeurus\AdminBundle\Entity\Application 
+     */
+    public function getApplication()
+    {
+        return $this->application;
+    }
+
+    /**
+     * Set theme
+     *
+     * @param \Aeurus\AdminBundle\Entity\Theme $theme
+     * @return Receiver
+     */
+    public function setTheme(\Aeurus\AdminBundle\Entity\Theme $theme)
+    {
+        $this->theme = $theme;
+
+        return $this;
+    }
+
+    /**
+     * Get theme
+     *
+     * @return \Aeurus\AdminBundle\Entity\Theme 
+     */
+    public function getTheme()
+    {
+        return $this->theme;
+    }
 }

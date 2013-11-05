@@ -8,6 +8,8 @@
             <span>{{ theme.name }}</span>
         </p>
     </div>
+    <a href="{{ path('survey', { 'application_id': application, 'theme_id': theme.id }) }}" class="btn btn-success pull-right"> Ver Encuesta</a>
+<div class="clearfix"></div>
 </header>
 
 <div class="span6">
@@ -41,14 +43,38 @@
 </div>
 <div class="span6">
 <h4>Preguntas</h4>
+
 <hr>
 
 {% for question in questions %}
-    <div id="{{ question.id }}" class="question">
+    <div id="{{ question.id }}" class="question row">
+        
+        <div class="span4">
+            <h4>{{ question.description }} <br>
+            <small>Tipo: {% if question.type == 0 %} Texto {% else %} Opciones {% endif %}</small> </h4>
+            {% if question.type == 1 %}
 
-    <h5>{{ question.description }}</h5>
-    Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.
+                {% if question.options %}
+                    <div class="control-group" style="padding-left: 30px">
+                    {% for option in question.options %}
+                        <label class="radio">
+                          <input type="radio" name="{{ question.id }}" value="{{ option.answer }}">
+                          {{ option.answer }}
+                        </label>
+                    {% endfor %}
+                    </div>
+                {% endif %}
+                
+            {% endif %}
 
+        </div>
+        {% if question.type == 1 %}
+        <div class="span2">
+            <br>
+            <a href="{{ path('question_new_option_answer', { 'application_id': application, 'theme_id': theme.id, 'question_id': question.id }) }}" class="btn btn-small pull-right">Agregar Opción</a>
+        </div>
+        {% endif %}
+    
     </div>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -75,15 +101,15 @@
 
 <h4>Agregar Pregunta</h4>
 <form action="{{ path('frontend_themequestion_create', { 'theme_id': theme.id, 'id': application }) }}" method="post" {{ form_enctype(form) }} >
-
+    <p>Seleccione el área de la plantilla y luego llene el siguiente formulario.</p>
     <div class="control-group">
-        {{ form_label(form.description) }}
+        {{ form_label(form.description, 'Pregunta:') }}
         {{ form_errors(form.description) }}
         {{ form_widget(form.description, { 'attr': {'class': 'input-xxlarge'} } ) }}
     </div>
 
     <div class="control-group">
-        {{ form_label(form.type) }}
+        {{ form_label(form.type, 'Tipo:') }}
         {{ form_errors(form.type) }}
         {{ form_widget(form.type) }}
     </div>
