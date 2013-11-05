@@ -31,45 +31,21 @@
     <div class="theme item span3">
         <div class="well">
             <h4>
-                <a href="#">{{  theme.name }}</a>
+                <a href="{{ path('application_theme_comments', { 'theme_id': theme.id, 'id': entity.id }) }}">{{  theme.name }}</a>
             </h4>
             <div class="info">
-                <a href="#">
+                <a href="{{ path('application_theme_comments', { 'theme_id': theme.id, 'id': entity.id }) }}">
                     <img src="{{ asset( theme.getWebPath ) }}" alt="{{ theme.name }}" width="230"/>
                 </a>
+            </div>
+            <div>
+              <br/>
+              <a href="{{ path('application_theme_comments', { 'theme_id': theme.id, 'id': entity.id }) }}" class="btn btn-block btn-primary">Encuesta</a>
+              <a href="{{ path('application_theme_comments', { 'theme_id': theme.id, 'id': entity.id }) }}" class="btn btn-block btn-success">Resultados</a>
             </div>
         </div>
     </div>
     {% endfor %}
-</div>
-
-
-
-<header class="page-header">
-    <div class="description">
-        <p class="lead">
-            <span>Comentarios</span>
-        </p>
-    </div>
-</header>
-
-<form action="{{ path('front_comment_create') }}" method="post" {{ form_enctype(form) }}>
-    {{ form_errors(form) }}
-
-    {{ form_label(form.description) }}
-    {{ form_errors(form.description) }}
-    {{ form_widget(form.description,{ 'attr': {'class': 'input-xxlarge'} }) }}
-    <button type="submit" class="btn btn-success">Agregar</button>
-
-    {{ form_widget(form._token) }}
-</form>
-
-<div  id="comments-show">
-  {% for comment in entity.comments %}
-    <blockquote>
-    {{ comment.description }}
-    </blockquote>
-  {% endfor %}
 </div>
 
 <script>

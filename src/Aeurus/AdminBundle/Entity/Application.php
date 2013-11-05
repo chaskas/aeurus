@@ -47,13 +47,6 @@ class Application
      */
     protected $themes;
 
-    /**
-     * @var \Doctrine\Common\Collections\ArrayCollection $comments
-     * 
-     * @ORM\OneToMany(targetEntity="Comment",mappedBy="applications")
-     */
-    protected $comments;
-
 
     /**
      * Get id

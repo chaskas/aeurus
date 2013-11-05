@@ -1,0 +1,52 @@
+{% extends '::base_frontend.html.twig' %}
+
+{% block body -%}
+
+<header class="page-header">
+    <div class="description">
+        <p class="lead">
+            <span>{{ theme.name }}</span>
+        </p>
+    </div>
+</header>
+
+<div class="span6">
+<img src="{{ asset( theme.getWebPath ) }}" alt="{{ theme.name }}" width="500"/>
+</div>
+<div class="span6">
+<h4>Preguntas</h4>
+<hr>
+{% for question in questions %}
+    <h5>{{ question.description }}</h5>
+    Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum
+    <hr>
+{% endfor %}
+
+<h4>Agregar Pregunta</h4>
+<form action="{{ path('frontend_themequestion_create', { 'theme_id': theme.id, 'id': application }) }}" method="post" {{ form_enctype(form) }} >
+
+    <div class="control-group">
+        {{ form_label(form.description) }}
+        {{ form_errors(form.description) }}
+        {{ form_widget(form.description, { 'attr': {'class': 'input-xxlarge'} } ) }}
+    </div>
+
+    <div class="control-group">
+        {{ form_label(form.type) }}
+        {{ form_errors(form.type) }}
+        {{ form_widget(form.type) }}
+    </div>
+
+    {{ form_widget(form.application, { value : application }) }}
+
+    {{ form_widget(form.theme, { value : theme.id }) }}
+
+    {{ form_rest(form) }}
+
+    <p>
+        <button type="submit" class="btn">Agregar</button>
+    </p>
+</form>
+
+</div>
+{% endblock %}
