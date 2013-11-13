@@ -23,7 +23,9 @@
             {{ form_widget(child) }}
           </h4>
           <div class="info">
-            <img src="{{ asset( theme.getWebPath ) }}" alt="{{ theme.name }}" width="130"/>
+            <a href="{{ asset( theme.getWebPath ) }}" data-lighter>
+              <img src="{{ asset( theme.getWebPath ) }}" alt="{{ theme.name }}" width="130"/>
+            </a>
           </div>
         </div>
       </div>
