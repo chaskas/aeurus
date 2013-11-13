@@ -352,4 +352,26 @@ class DefaultController extends Controller
             'receiverForm' => $receiverForm->createView()
         );
     }
+
+    /**
+     * Lists all comments entities on an theme application.
+     *
+     * @Route("/order/{application_id}/theme/{theme_id}/results", name="results")
+     * @Method("GET")
+     * @Template()
+     */
+    public function resultsAction(Request $request,$application_id, $theme_id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $theme = $em->getRepository('AeurusAdminBundle:Theme')->find($theme_id);
+
+        $questions = $em->getRepository('AeurusAdminBundle:ThemeQuestion')->findBy(array('application' => $application_id, 'theme' => $theme_id));
+
+        return array(
+            'theme' => $theme,
+            'questions'   => $questions
+        );
+
+    }
 }

@@ -41,7 +41,7 @@
             <div>
               <br/>
               <a href="{{ path('application_theme_comments', { 'theme_id': theme.id, 'id': entity.id }) }}" class="btn btn-block btn-primary">Encuesta</a>
-              <a href="{{ path('application_theme_comments', { 'theme_id': theme.id, 'id': entity.id }) }}" class="btn btn-block btn-success">Resultados</a>
+              <a href="{{ path('results', { 'application_id': entity.id, 'theme_id': theme.id})  }}" class="btn btn-block btn-success">Resultados</a>
             </div>
         </div>
     </div>
